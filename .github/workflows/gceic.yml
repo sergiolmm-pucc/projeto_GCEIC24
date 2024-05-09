@@ -19,3 +19,15 @@ jobs:
       - name: lista diretorio
         run: ls -la 
   
+  Deploy:
+    needs: getCode
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Faz sincronismo com o Glitch
+        uses: kanadgupta/glitch-sync@v3.0.1
+        with:
+            auth-token: '${{ secrets.authToken }}'
+            project-id: '${{ secrets.projectId }}'
+
