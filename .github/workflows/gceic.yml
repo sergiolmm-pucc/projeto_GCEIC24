@@ -10,5 +10,12 @@ jobs:
         run: echo "Alo turma"
       - name :  Lista diretorio
         run: ls -la 
-        
+  
+  getCode:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  Get code from repositori to evaluate
+        uses: actions/checkout@v3
+      - name: lista diretorio
+        run: ls -la 
   
