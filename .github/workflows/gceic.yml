@@ -1,0 +1,14 @@
+name: Projeto Final GCEIC 2024
+on: [push]
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gera siada do Github context
+        run: echo "${{ toJSON(github) }}"
+      - name : Mostra mensagem
+        run: echo "Alo turma"
+      - name :  Lista diretorio
+        run: ls -la 
+        
+  
