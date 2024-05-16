@@ -41,7 +41,7 @@ jobs:
 
 
   Deploy:
-    needs: getCode
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
