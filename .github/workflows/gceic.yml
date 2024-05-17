@@ -24,7 +24,7 @@ jobs:
         run: ls -la 
 
       - name: lista work directory
-        run: ls -la /home/runner/work/
+        run: ls -la /home/runner/work/projeto_GCEIC24
 
 
   test:
@@ -45,6 +45,7 @@ jobs:
         run: npm ci
       - name: Run Lint
         run: npm run lint 
+          # aqui uma entrada para cada teste
       - name: Roda os testes
         run: npm test
       - name: Gera o Relatório dos testes
@@ -70,17 +71,29 @@ jobs:
 
   Funcional:
     needs: Deploy
+    permissions: write-all
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     steps:
       - name: Get Code
         uses: actions/checkout@v3
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3	
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Instala Dependencias
+        run: npm ci        
       
       - name: Run teste Funcional no glitch
         run: npm run F-test
 
       - name: fotos da tela
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Fotos dos testes
-          # Path to the release files          Gravar as fotos na raiz do projeto no docker
-          path: /home/runner/work/PESIII/*.png  
+          # Path to the release files          
+          # Gravar as fotos na raiz do projeto no docker
+          path: /home/runner/work/projeto_GCEIC24/fotos/*.png  
