@@ -24,7 +24,7 @@ jobs:
         run: ls -la 
 
       - name: lista work directory
-        run: ls -la /home/runner/work/projeto_GCEIC24
+        run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24
 
 
   test:
@@ -96,4 +96,4 @@ jobs:
           name: Fotos dos testes
           # Path to the release files          
           # Gravar as fotos na raiz do projeto no docker
-          path: /home/runner/work/projeto_GCEIC24/fotos/*.png  
+          path: /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos/*.png  
