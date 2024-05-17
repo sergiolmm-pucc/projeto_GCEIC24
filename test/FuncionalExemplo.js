@@ -7,25 +7,27 @@ const chrome = require('selenium-webdriver/chrome');
 const { Options } = require('selenium-webdriver/chrome');
 
 (async () => {
+
+   // Configuração do ambiente do WebDriver e opções do navegador
+   const screen = {
+    width: 1024,
+    height: 720
+  };
+
+  const chromeOptions = new Options();
+  chromeOptions.addArguments('--headless');
+  chromeOptions.addArguments('--no-sandbox');
+  chromeOptions.windowSize(screen);
+
+  const builder = new Builder()
+    .forBrowser('chrome')
+    .setChromeOptions(chromeOptions);
+
+    // Criação da instância do WebDriver
+  let driver = await builder.build();
+
   try {
-    // Configuração do ambiente do WebDriver e opções do navegador
-    const screen = {
-      width: 1024,
-      height: 720
-    };
-
-    const chromeOptions = new Options();
-    chromeOptions.addArguments('--headless');
-    chromeOptions.addArguments('--no-sandbox');
-    chromeOptions.windowSize(screen);
-
-    const builder = new Builder()
-      .forBrowser('chrome')
-      .setChromeOptions(chromeOptions);
-
-      // Criação da instância do WebDriver
-    const driver = await builder.build();
-
+    
     // Navegação para a página HTML
     await driver.get('https://aeolian-momentous-cellar.glitch.me/Example');
 
@@ -36,17 +38,31 @@ const { Options } = require('selenium-webdriver/chrome');
     
     await driver.wait(until.elementLocated(By.id('valorBase')), 10000);
     await driver.wait(until.elementIsVisible(driver.findElement(By.id('valorBase'))), 10000);
-    await driver.findElement(By.name('valorBase')).sendKeys(4, Key.RETURN);
-
-    
     await driver.wait(until.elementLocated(By.id('valorAltura')), 10000);
     await driver.wait(until.elementIsVisible(driver.findElement(By.id('valorAltura'))), 10000);
+
+    await driver.takeScreenshot().then((image, err) => {
+        require('fs').writeFile('./fotos/exemplo/inicio-example.png', image, 'base64', function (err) {
+          if (err == null){
+              console.log('Gravou Foto');
+          }else{
+              console.log('Erro ->' + err);
+          }
+  
+        });
+      });
+  
+    await driver.findElement(By.name('valorBase')).sendKeys(4, Key.RETURN);
     await driver.findElement(By.name('valorAltura')).sendKeys(4, Key.RETURN);
 
    // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
-      require('fs').writeFile('inicio-example.png', image, 'base64', function (err) {
-        console.log('Erro' + err);
+      require('fs').writeFile('./fotos/exemplo/valorDigitado-example.png', image, 'base64', function (err) {
+        if (err == null){
+            console.log('Gravou Foto');
+        }else{
+            console.log('Erro ->' + err);
+        }
       });
     });
     
@@ -60,19 +76,24 @@ const { Options } = require('selenium-webdriver/chrome');
       console.log('Falhou: Botões de impostos não estão visíveis');
     }
 
-    valorAltura = await driver.findElement(By.id('valorAltura'));
-    await valorAltura.sendKeys('10');
+   // valorAltura = await driver.findElement(By.id('valorAltura'));
+   // await valorAltura.sendKeys('10');
 
-    valorBase = await driver.findElement(By.id('valorBase'));
-    await valorBase.sendKeys('4');
+   // valorBase = await driver.findElement(By.id('valorBase'));
+   // await valorBase.sendKeys('4');
 
     // Clique no botão 
     await calculaButton.click();
 
     // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
-      require('fs').writeFile('fim-example.png', image, 'base64', function (err) {
-        console.log('Erro' + err);
+      require('fs').writeFile('./fotos/exemplo/fim-example.png', image, 'base64', function (err) {
+        if (err == null){
+            console.log('Gravou Foto');
+        }else{
+            console.log('Erro ->' + err);
+        }
+
       });
     });
     // Encerramento do WebDriver
