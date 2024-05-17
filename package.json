@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "lint": "eslint './routes/**/*.js?(x)'",
-    "test": "jest -ci --reportes=default --reporters=jest-junit"
+    "test": "jest -ci --reportes=default --reporters=jest-junit",
+    "F-test": "node ./test/FuncionalExemplo"
+
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
