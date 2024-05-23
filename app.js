@@ -6,11 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var irrfRouter = require('./routes/irrf.routes');
 
 var exampleRouter = require('./routes/example');
-var devOps3MarkUpRouter = require('./routes/dev-ops-3-mark-up');
-var temperatureRouter = require('./routes/temperature');
+var ifspRouter = require('./routes/ifspRoute');
 
 var app = express();
 
@@ -26,10 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/irrf', irrfRouter);
 app.use('/example', exampleRouter);
-app.use('/dev-ops-3-mark-up', devOps3MarkUpRouter);
-app.use('/temperature', temperatureRouter);
+app.use('/ifsp', ifspRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,7 +33,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -46,5 +42,9 @@ app.use(function(err, req, res) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(3000, () => {
+  console.log("app listening on port 3000")
+})
 
 module.exports = app;
