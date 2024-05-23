@@ -6,11 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var irrfRouter = require('./routes/irrf.routes');
-
 var exampleRouter = require('./routes/example');
-var devOps3MarkUpRouter = require('./routes/dev-ops-3-mark-up');
-var temperatureRouter = require('./routes/temperature');
+var calculadoraRouter = require('./routes/calculadora');
 
 var app = express();
 
@@ -26,10 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/irrf', irrfRouter);
 app.use('/example', exampleRouter);
-app.use('/dev-ops-3-mark-up', devOps3MarkUpRouter);
-app.use('/temperature', temperatureRouter);
+app.use('/calculadora', calculadoraRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
