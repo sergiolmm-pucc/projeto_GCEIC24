@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto Calórico</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-indigo-100">
+  <div class="h-screen flex justify-center items-center px-8 py-8 border">
+    <div class="flex flex-col items-center bg-white rounded-3xl justify-between">
+        <h1 class="text-center font-bold text-3xl py-8 px-8">Calculadora de gasto calórico</h1>
+        <div class="flex flex-col gap-8 py-4 w-96 h-96">
+            <form class="flex flex-col gap-2" id="signupForm" action="/CR/" method="POST" onsubmit="handleSubmit(event)">
+                <div class="input-group"> 
+                    <select name="gender" required class="w-full p-2 border border-gray-300 rounded">
+                        <option value="" disabled selected>Selecione o sexo</option>
+                        <option value="male">Homem</option>
+                        <option value="female">Mulher</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="age" placeholder="Idade" required class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="weight" placeholder="Peso" required class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div class="flex items-center my-5">
+                    <input type="checkbox" id="termsCheckbox" class="mr-2" required />
+                    <label for="termsCheckbox" class="text-sm">
+                        Concordo com nossos Termos de uso e Política de Privacidade
+                    </label>
+                </div>
+                <button type="submit" class="btn bg-indigo-500 text-white px-4 py-2 rounded">Calcular</button>
+            </form>
+            <div id="result" class="my-4"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer bg-gray-900 text-gray-300">
+    <div class="container mx-auto py-8">
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full md:w-1/2 lg:w-1/3">
+          <h6 class="text-white font-bold" >Sobre</h6>
+          <p class="text-justify">Nossa calculadora de gasto energético e atlas é uma ferramenta essencial para quem busca entender e monitorar seu consumo de energia. Com uma interface simples e intuitiva, oferecemos uma maneira fácil de calcular o gasto energético em diversas atividades do dia a dia, como exercícios físicos, tarefas domésticas e até mesmo o uso de dispositivos eletrônicos.</p>
+        </div>
+
+        <div class="w-full md:w-1/4 lg:w-1/6">
+          <h6 class="text-white font-bold" >Grupo 18 - Devops</h6>
+          <ul class="footer-links">
+            <li><a>Gabriel Victor Gracini Hervatin - </a></li>
+            <li><a >Gustavo Fernandes Bezerra - </a></li>
+            <li><a >José Wellington de Lima Silva - 21011957</a></li>
+            <li><a >Theodoro Pescuma Mimuta</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <hr class="my-4">
+      <div class="flex justify-between">
+        <div class="w-full md:w-1/2">
+          <p class="text-center md:text-left">Puc Campinas &copy; 2024 - GERÊNCIA DE CONFIGURAÇÃO, ENTREGA E INTEGRAÇÃO CONTÍNUA  
+        </div>
+      </div>
+    </div>
+</footer>
+
+<script src="../javascripts/caloricExpenditure.js"></script>
+
+</body>
+</html>
