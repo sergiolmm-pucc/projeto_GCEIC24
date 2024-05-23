@@ -5,6 +5,9 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 
+var tmbRouter = require('./routes/tmb.routes')
+
+
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var geomcalcRouter = require("./routes/geomcalcRouter");
@@ -40,6 +43,8 @@ app.use('/calculadora', calculadoraRouter);
 app.use('/dev-ops-3-mark-up', devOps3MarkUpRouter);
 app.use('/temperature', temperatureRouter);
 app.use('/caloricExpenditure', caloricExpenditureRouter);
+
+app.use('/tmb', tmbRouter);
 
 
 // catch 404 and forward to error handler
