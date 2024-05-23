@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type = "text/javascript" src="../javascripts/calculadoraJuros.js"></script>
+
+</head>
+<body>
+    <H1>Simulador de juros compostos </H1><br>
+
+    <br>
+    Valor Inicial: <input type="number" name="valorInvestido" id="valorInvestido"><br>
+    Taxa de Juros:    <input type="number" name="taxaJuros" id="taxaJuros"><br>
+    Tempo:          <input type="number" name="tempoRendimento" id="tempoRendimento"><br>
+    Valor Final:  <input type="text" name="resultado" id="resultado"><br>
+    <button id="calcula" name="calcula" onclick="document.getElementById('resultado').value = 
+         calcularRendimento( 
+            document.getElementById('valorInvestido').value ,
+            document.getElementById('taxaJuros').value ,
+            document.getElementById('tempoRendimento').value 
+         );">Calcular</button>
+</body>
+</html>
