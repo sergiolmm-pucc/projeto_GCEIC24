@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo Imposto</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+            padding: 0px;
+            background: rgb(234, 255, 252);
+        }
+
+        form {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 275px;
+            height: 175px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.116);
+        }
+
+        input {
+            height: 35px;
+            width: 220px;
+        }
+
+        .TextInput {
+            padding: 0px 15px;
+            background: rgb(235, 235, 235);
+            color: rgb(39, 39, 39);
+            border: none;
+            font-size: 15px;
+            border-radius: 7px;
+        }
+
+        .TextInput:focus {
+            outline: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.116);
+            border-bottom: rgb(78, 78, 78);
+        }
+
+        .SubmitInput {
+            width: 250px;
+            height: 35px;
+            background: rgb(83, 236, 203);
+            color: rgb(255, 255, 255);
+            border: none;
+            font-size: 17px;
+            border-radius: 7px;
+        }
+
+        .SubmitInput:hover {
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.116);
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario-imposto">
+        <input class="TextInput" type="text" id="price" placeholder="Valor do Produto">
+        <input class="TextInput" type="text" id="tax" placeholder="Alíquota">
+        <input class="SubmitInput" type="submit" value="calcular">
+    </form>
+    <script src="../javascripts/ifsp.js"></script>
+</body>
+</html>
