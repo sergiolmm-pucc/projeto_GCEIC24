@@ -5,6 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 
+var SDIRouter = require('./routes/SDI.js');
+
 var tmbRouter = require('./routes/tmb.routes')
 
 
@@ -37,6 +39,7 @@ app.use("/geomcalc", geomcalcRouter);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/SDI', SDIRouter);
 app.use('/irrf', irrfRouter);
 app.use('/example', exampleRouter);
 app.use('/calculadora', calculadoraRouter);
