@@ -11,6 +11,7 @@ var irrfRouter = require('./routes/irrf.routes');
 var exampleRouter = require('./routes/example');
 var devOps3MarkUpRouter = require('./routes/dev-ops-3-mark-up');
 var temperatureRouter = require('./routes/temperature');
+var caloricExpenditureRouter = require('./routes/caloricExpendieture');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/irrf', irrfRouter);
 app.use('/example', exampleRouter);
 app.use('/dev-ops-3-mark-up', devOps3MarkUpRouter);
 app.use('/temperature', temperatureRouter);
+app.use('/caloricExpenditure', caloricExpenditureRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
