@@ -1,19 +1,6 @@
-:root {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-
-  color: #141414;
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
   margin: 0;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -30,7 +17,18 @@ body {
   justify-content: start;
   align-items: stretch;
 }
+:root {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
 
+  color: #141414;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 #card h1 {
   font-size: larger;
 }
