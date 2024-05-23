@@ -4,7 +4,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var exampleRouter = require("./routes/example");
@@ -20,6 +19,8 @@ var infsRouter = require("./routes/infsRoute");
 var irrfRouter = require("./routes/irrf.routes");
 
 var SDIRouter = require("./routes/SDI.js");
+
+var roiRouter = require("./routes/roi-devops14");
 
 var temperatureRouter = require("./routes/temperature");
 var tmbRouter = require("./routes/tmb.routes");
@@ -51,13 +52,15 @@ app.use("/geomcalc", geomcalcRouter);
 app.use("/irrf", irrfRouter);
 app.use("/infs", infsRouter);
 
+app.use("/roi", roiRouter);
+
 app.use("/SDI", SDIRouter);
 
 app.use("/temperature", temperatureRouter);
 app.use("/tmb", tmbRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
