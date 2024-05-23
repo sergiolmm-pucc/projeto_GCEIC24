@@ -6,7 +6,7 @@ function handleSubmit(event) {
     formData.forEach((value, key) => {
         jsonData[key] = value;
     });
-    fetch('/CE/', {
+    fetch('/caloricExpenditure/CE/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
