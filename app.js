@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var exampleRouter = require('./routes/example');
+var devOps3MarkUpRouter = require('./routes/dev-ops-3-mark-up');
+var temperatureRouter = require('./routes/temperature');
 
 var app = express();
 
@@ -24,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/example', exampleRouter);
+app.use('/dev-ops-3-mark-up', devOps3MarkUpRouter);
+app.use('/temperature', temperatureRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -31,7 +35,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

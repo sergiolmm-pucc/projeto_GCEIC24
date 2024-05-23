@@ -1,0 +1,21 @@
+html {
+    background-color: azure;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    text-align: center;
+}
+
+.conversorContainer {
+    width: fit-content;
+    padding: 2rem;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #7eedff;
+    box-shadow: -3px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.conversorBody {
+    margin-top: 3rem;
+}
