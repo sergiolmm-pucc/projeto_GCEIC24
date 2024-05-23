@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/roi-devops14.css" />
+    <title>Cácular ROI</title>
+  </head>
+  <body class="body-container">
+    <main class="main-container">
+      <div class="container">
+        <h1>Cálculo do ROI</h1>
+        <form id="form-action" class="form-container">
+          <div class="form-input">
+            <label for="investimento">Investimento realizado:</label>
+            <input
+              id="investimento"
+              name="investimento"
+              type="number"
+              onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))"
+              required
+            />
+          </div>
+          <div class="form-input">
+            <label for="retorno">Retorno bruto:</label>
+            <input id="retorno" name="retorno" type="number" required />
+          </div>
+          <button class="form-button" type="submit">Calcular</button>
+        </form>
+        <div class="roi-container">
+          <label id="label-roi"></label>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script type="text/javascript" src="../javascripts/roi-devops14.js"></script>
+</html>
