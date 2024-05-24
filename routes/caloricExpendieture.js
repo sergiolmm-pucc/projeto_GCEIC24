@@ -1,12 +1,12 @@
-const express = require('express');
-const CaloricExpenditureController = require('../controllers/CaloricExpenditureController');
-const fs = require('fs');
+const express = require("express");
+const CaloricExpenditureController = require("../controllers/CaloricExpenditureController");
+const fs = require("fs");
 
 const router = express.Router();
 
-router.post('/CE', CaloricExpenditureController.calculate);
+router.post("/CE", CaloricExpenditureController.calculate);
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   fs.readFile("./public/html/caloricExpenditure.html", function(err, html) {
     if (err) {
       throw err;
@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
       res.end();
     }
   });
-})
-
+});
 
 module.exports = router;

@@ -44,9 +44,9 @@ router.post("/calcular", (req, res) => {
   //const { ganhoInvestimento, custoInvestimento } = req.body;
 
   const roi =
-      ((Number(ganhoInvestimento) - Number(custoInvestimento)) /
-          Number(custoInvestimento)) *
-      100;
+    ((Number(ganhoInvestimento) - Number(custoInvestimento)) /
+      Number(custoInvestimento)) *
+    100;
 
   return res.status(200).send({ roi });
 });

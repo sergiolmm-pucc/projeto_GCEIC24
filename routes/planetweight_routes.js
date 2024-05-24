@@ -1,17 +1,15 @@
-var express = require('express');
-const {join} = require("node:path");
+var express = require("express");
+const { join } = require("node:path");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res,) {
-  res.sendFile(join(__dirname, '../public/html/planetweight.html'))
+router.get("/", function(req, res) {
+  res.sendFile(join(__dirname, "../public/html/planetweight.html"));
 });
 
 // router.get('/', function(req, res, next) {
 //   res.sendFile("../public/html/geomcalcIndex.html")
 // });
-
-
 
 // Body	Multiple of Earth’s Gravity
 // Sun	27.01
@@ -26,44 +24,38 @@ router.get('/', function(req, res,) {
 // Neptune	1.19
 // Pluto	0.06
 
-
-router.post('/mercury',(req,res) => {
+router.post("/mercury", (req, res) => {
   const weight = req.body.weight;
-  return res.send(`your weight is  ${weight*0.38} kg`)
-})
-router.post('/venus',(req,res) => {
+  return res.send(`your weight is  ${weight * 0.38} kg`);
+});
+router.post("/venus", (req, res) => {
   const weight = req.body.weight;
-  return res.send(`your weight is  ${weight*0.91} kg`)
-})
+  return res.send(`your weight is  ${weight * 0.91} kg`);
+});
 
-router.post('/mars',(req,res) => {
+router.post("/mars", (req, res) => {
   const weight = req.body.weight;
-  return res.send(`your weight is  ${weight*0.38} kg`)
-})
+  return res.send(`your weight is  ${weight * 0.38} kg`);
+});
 
-
-router.post('/jupiter',(req,res) => {
+router.post("/jupiter", (req, res) => {
   const weight = req.body.weight;
-  return res.send(`your weight is  ${weight*2.34} kg`)
-})
+  return res.send(`your weight is  ${weight * 2.34} kg`);
+});
 
-
-router.post('/uranus',(req,res) => {
+router.post("/uranus", (req, res) => {
   const weight = req.body.weight;
-  return res.send(`your weight is  ${weight*0.92} kg`)
-})
+  return res.send(`your weight is  ${weight * 0.92} kg`);
+});
 
-
-router.post('/neptune',(req,res) => {
+router.post("/neptune", (req, res) => {
   const weight = req.body.weight;
-  return res.send(`your weight is  ${weight*1.19} kg`)
-})
+  return res.send(`your weight is  ${weight * 1.19} kg`);
+});
 
-router.post('/pluto',(req,res) => {
+router.post("/pluto", (req, res) => {
   const weight = req.body.weight;
-  return res.send(`your weight is  ${weight*0.06} kg`)
-})
-
-
+  return res.send(`your weight is  ${weight * 0.06} kg`);
+});
 
 module.exports = router;

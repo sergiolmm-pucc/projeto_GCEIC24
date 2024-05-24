@@ -18,7 +18,7 @@ var geomcalcRouter = require("./routes/geomcalcRouter");
 var infsRouter = require("./routes/infsRoute");
 var irrfRouter = require("./routes/irrf.routes");
 
-var planetweightRouter = require("./routes/planetweight_routes")
+var planetweightRouter = require("./routes/planetweight_routes");
 
 var roiRouter = require("./routes/roi-devops14");
 
@@ -54,7 +54,7 @@ app.use("/geomcalc", geomcalcRouter);
 app.use("/irrf", irrfRouter);
 app.use("/infs", infsRouter);
 
-app.use("/planetweight",planetweightRouter)
+app.use("/planetweight", planetweightRouter);
 
 app.use("/roi", roiRouter);
 
@@ -64,7 +64,7 @@ app.use("/temperature", temperatureRouter);
 app.use("/tmb", tmbRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 

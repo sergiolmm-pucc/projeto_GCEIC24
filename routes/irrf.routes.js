@@ -3,8 +3,8 @@ var router = express.Router();
 var fs = require("fs");
 
 /* GET users listing. */
-router.get("/", function (req, res) {
-  fs.readFile("./public/html/irrf.html", function (err, html) {
+router.get("/", function(req, res) {
+  fs.readFile("./public/html/irrf.html", function(err, html) {
     if (err) {
       throw err;
     } else {

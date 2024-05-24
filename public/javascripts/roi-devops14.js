@@ -6,19 +6,16 @@ form.addEventListener("submit", async (event) => {
   const investimento = document.getElementById("investimento").value;
   const retorno = document.getElementById("retorno").value;
 
-  const response = await fetch(
-    `/roi/calcular`,
-    {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        ganhoInvestimento: Number(retorno),
-        custoInvestimento: Number(investimento),
-      }),
-    }
-  ).then((response) => {
+  const response = await fetch(`/roi/calcular`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      ganhoInvestimento: Number(retorno),
+      custoInvestimento: Number(investimento),
+    }),
+  }).then((response) => {
     if (!response.ok) {
       alert("Algo deu errado ao calcular o ROI");
     }
