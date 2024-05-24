@@ -73,3 +73,9 @@ function calcularTMBHomem(peso, altura, idade) {
 function calcularTMBMulher(peso, altura, idade) {
   return 655 + 9.6 * peso + 1.8 * altura - 4.7 * idade;
 }
+
+module.exports = {
+  calcularFatorAtividade,
+  calcularTMBHomem,
+  calcularTMBMulher,
+};

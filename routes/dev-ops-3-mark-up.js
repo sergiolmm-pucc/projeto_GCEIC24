@@ -10,7 +10,7 @@ const schema = z.object({
   ml: z.number().positive(),
 });
 
-router.get("/", (req, res) => {
+router.get("/", (_req, res) => {
   fs.readFile("./public/html/dev-ops-3-mark-up.html", function(err, html) {
     if (err) {
       throw err;

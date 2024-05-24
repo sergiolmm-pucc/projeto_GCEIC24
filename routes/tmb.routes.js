@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require("fs");
 
 /* GET users listing. */
-router.get("/", function(req, res) {
+router.get("/", function(_req, res) {
   fs.readFile("./public/html/tmb.html", function(err, html) {
     if (err) {
       throw err;

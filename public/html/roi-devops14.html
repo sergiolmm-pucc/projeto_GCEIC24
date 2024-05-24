@@ -17,15 +17,17 @@
               id="investimento"
               name="investimento"
               type="number"
-              onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))" 
+              {#
+              onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57))"
+              #}
               required
-              />
+            />
           </div>
           <div class="form-input">
             <label for="retorno">Retorno bruto:</label>
             <input id="retorno" name="retorno" type="number" required />
           </div>
-          <input class="form-button" type="submit" value="Calcular"/>
+          <input class="form-button" type="submit" value="Calcular" />
         </form>
         <div class="roi-container">
           <label id="label-roi"></label>

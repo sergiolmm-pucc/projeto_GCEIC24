@@ -25,7 +25,7 @@ const roiSchema = zod.object({
 });
 
 // Rota para verificar a integridade
-router.get("/", (_, res) => {
+router.get("/", (_req, res) => {
   fs.readFile("./public/html/roi-devops14.html", function(err, html) {
     if (err) {
       throw err;

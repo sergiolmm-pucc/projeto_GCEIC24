@@ -31,3 +31,5 @@ function handleSubmit(event) {
       alert("Erro: " + error.message);
     });
 }
+
+module.exports = { handleSubmit };

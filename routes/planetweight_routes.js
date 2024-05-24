@@ -3,13 +3,9 @@ const { join } = require("node:path");
 var router = express.Router();
 
 /* GET home page. */
-router.get("/", function(req, res) {
+router.get("/", function(_req, res) {
   res.sendFile(join(__dirname, "../public/html/planetweight.html"));
 });
-
-// router.get('/', function(req, res, next) {
-//   res.sendFile("../public/html/geomcalcIndex.html")
-// });
 
 // Body	Multiple of Earth’s Gravity
 // Sun	27.01

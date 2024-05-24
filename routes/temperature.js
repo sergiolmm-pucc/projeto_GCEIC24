@@ -28,7 +28,7 @@ function convertFromKelvin(kelvin) {
   };
 }
 
-router.get("/", (req, res) => {
+router.get("/", (_req, res) => {
   fs.readFile("./public/html/temperature.html", function(err, html) {
     if (err) {
       throw err;

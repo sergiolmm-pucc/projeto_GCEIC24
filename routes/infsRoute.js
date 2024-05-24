@@ -6,7 +6,7 @@ var path = require("path");
 router.use(express.urlencoded({ extended: true }));
 
 // Rota para a página de Imposto
-router.get("/", function(req, res) {
+router.get("/", function(_req, res) {
   res.sendFile(path.join(__dirname, "..", "public", "html", "infs.html"));
 });
 

@@ -16,3 +16,5 @@ async function calculateWeight(planet) {
   const data = await response.text();
   document.getElementById("result").innerText = data;
 }
+
+module.exports = { calculateWeight };

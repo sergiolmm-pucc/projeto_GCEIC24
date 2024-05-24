@@ -64,7 +64,7 @@ app.use("/temperature", temperatureRouter);
 app.use("/tmb", tmbRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function(_req, _res, next) {
   next(createError(404));
 });
 

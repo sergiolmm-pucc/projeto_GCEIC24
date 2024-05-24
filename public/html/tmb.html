@@ -1,47 +1,76 @@
 <!DOCTYPE html>
-            <html lang="pt-br">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Calculadora de TMB</title>
-                <script type="text/javascript" src="../javascripts/tmb.js"></script>
-            </head>
-            <body>
-                <h1><u>CALCULADORA DE TAXA METABÓLICA BASAL (TMB)</u></h1>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de TMB</title>
+    <script type="text/javascript" src="../javascripts/tmb.js"></script>
+  </head>
+  <body>
+    <h1><u>CALCULADORA DE TAXA METABÓLICA BASAL (TMB)</u></h1>
 
-                <p><b>Definição:</b>A Taxa Metabólica Basal (TMB) é a quantidade mínima de energia que o corpo precisa para funcionar em repouso, ou seja, para manter as funções vitais como respiração, circulação sanguínea, temperatura corporal, etc. A TMB é influenciada por fatores como idade, peso, altura, sexo e nível de atividade física.</p>
-                
-                <form id="tmbForm">
-                    <label for="altura">Altura (cm):</label>
-                    <input id="altura" name="altura" type="number" min="1" required><br><br>
-        
-                    <label for="peso">Peso (kg):</label>
-                    <input id="peso" name="peso" type="number" min="1" required><br><br>
-        
-                    <label for="idade">Idade:</label>
-                    <input id="idade" name="idade" type="number" min="1" required><br><br>
-                    
-                    <label for="atividade">Atividade Física:</label>
-                    <select id="atividade" name="atividade" required>
-                        <option value="sedentario">Sedentário (pouco ou nenhum exercício)</option>
-                        <option value="leve">Levemente ativo (exercício leve 1 a 3 dias por semana)</option>
-                        <option value="moderado">Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana)</option>
-                        <option value="ativo">Altamente ativo (exercício pesado de 5 a 6 dias por semana)</option>
-                        <option value="extremo">Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)</option>
-                    </select><br><br>
-                    
-                    <label>Gênero:</label><br>
-                    <input type="radio" id="homem" name="genero" value="homem" required>
-                    <label for="homem">Homem</label><br>
-                    
-                    <input type="radio" id="mulher" name="genero" value="mulher" required>
-                    <label for="mulher">Mulher</label><br><br>
-                    
-                    <button type="submit">Calcular TMB</button>
-                </form>
-                <br>
+    <p>
+      <b>Definição:</b>A Taxa Metabólica Basal (TMB) é a quantidade mínima de
+      energia que o corpo precisa para funcionar em repouso, ou seja, para
+      manter as funções vitais como respiração, circulação sanguínea,
+      temperatura corporal, etc. A TMB é influenciada por fatores como idade,
+      peso, altura, sexo e nível de atividade física.
+    </p>
 
-                <div id="resultado"></div>
-                
-            </body>
+    <form id="tmbForm">
+      <label for="altura">Altura (cm):</label>
+      <input
+        id="altura"
+        name="altura"
+        type="number"
+        min="1"
+        required
+      /><br /><br />
+
+      <label for="peso">Peso (kg):</label>
+      <input id="peso" name="peso" type="number" min="1" required /><br /><br />
+
+      <label for="idade">Idade:</label>
+      <input
+        id="idade"
+        name="idade"
+        type="number"
+        min="1"
+        required
+      /><br /><br />
+
+      <label for="atividade">Atividade Física:</label>
+      <select id="atividade" name="atividade" required>
+        <option value="sedentario"
+          >Sedentário (pouco ou nenhum exercício)</option
+        >
+        <option value="leve"
+          >Levemente ativo (exercício leve 1 a 3 dias por semana)</option
+        >
+        <option value="moderado"
+          >Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por
+          semana)</option
+        >
+        <option value="ativo"
+          >Altamente ativo (exercício pesado de 5 a 6 dias por semana)</option
+        >
+        <option value="extremo"
+          >Extremamente ativo (exercício pesado diariamente e até 2 vezes por
+          dia)</option
+        > </select
+      ><br /><br />
+
+      <label>Gênero:</label><br />
+      <input type="radio" id="homem" name="genero" value="homem" required />
+      <label for="homem">Homem</label><br />
+
+      <input type="radio" id="mulher" name="genero" value="mulher" required />
+      <label for="mulher">Mulher</label><br /><br />
+
+      <button type="submit">Calcular TMB</button>
+    </form>
+    <br />
+
+    <div id="resultado"></div>
+  </body>
 </html>
