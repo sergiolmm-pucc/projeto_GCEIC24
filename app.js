@@ -22,7 +22,7 @@ var planetweightRouter = require("./routes/planetweight_routes")
 
 var roiRouter = require("./routes/roi-devops14");
 
-var SDIRouter = require("./routes/SDI.js");
+var SDIRouter = require("./routes/SDI");
 
 var temperatureRouter = require("./routes/temperature");
 var tmbRouter = require("./routes/tmb.routes");
