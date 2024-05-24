@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
 const z = require("zod");
+const fs = require("fs");
 
 const schema = z.object({
   cp: z.number().positive(),
