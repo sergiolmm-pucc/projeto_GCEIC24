@@ -18,7 +18,7 @@ var geomcalcRouter = require("./routes/geomcalcRouter");
 var infsRouter = require("./routes/infsRoute");
 var irrfRouter = require("./routes/irrf.routes");
 
-var planetweightrouter = require("./routes/planetweight_routes.js")
+var planetweightRouter = require("./routes/planetweight_routes")
 
 var roiRouter = require("./routes/roi-devops14");
 
@@ -54,7 +54,7 @@ app.use("/geomcalc", geomcalcRouter);
 app.use("/irrf", irrfRouter);
 app.use("/infs", infsRouter);
 
-app.use("/planetweight",planetweightrouter)
+app.use("/planetweight",planetweightRouter)
 
 app.use("/roi", roiRouter);
 

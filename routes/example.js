@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
             res.write(html);  
             res.end();  
         }
-    });  
+    });
   });
   
 
