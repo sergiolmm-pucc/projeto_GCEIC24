@@ -13,14 +13,19 @@ var caloricExpenditureRouter = require("./routes/caloricExpendieture");
 
 var devOps3MarkUpRouter = require("./routes/dev-ops-3-mark-up");
 
+var geomcalcRouter = require("./routes/geomcalcRouter");
+
 var infsRouter = require("./routes/infsRoute");
 var irrfRouter = require("./routes/irrf.routes");
 
-var SDIRouter = require("./routes/SDI.js");
-var tmbRouter = require("./routes/tmb.routes");
+var planetweightrouter = require("./routes/planetweight_routes.js")
+
 var roiRouter = require("./routes/roi-devops14");
-var geomcalcRouter = require("./routes/geomcalcRouter");
+
+var SDIRouter = require("./routes/SDI.js");
+
 var temperatureRouter = require("./routes/temperature");
+var tmbRouter = require("./routes/tmb.routes");
 
 var app = express();
 
@@ -37,17 +42,23 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/example", exampleRouter);
-// Definir suas rotas
+
+app.use("/calculadora", calculadoraRouter);
+app.use("/caloricExpenditure", caloricExpenditureRouter);
+
+app.use("/dev-ops-3-mark-up", devOps3MarkUpRouter);
+
+app.use("/geomcalc", geomcalcRouter);
+
+app.use("/irrf", irrfRouter);
+app.use("/infs", infsRouter);
+
+app.use("/planetweight",planetweightrouter)
+
+app.use("/roi", roiRouter);
 app.use("/SDI", SDIRouter);
 app.use("/tmb", tmbRouter);
-app.use("/roi", roiRouter);
-app.use("/infs", infsRouter);
-app.use("/irrf", irrfRouter);
-app.use("/geomcalc", geomcalcRouter);
-app.use("/calculadora", calculadoraRouter);
 app.use("/temperature", temperatureRouter);
-app.use("/dev-ops-3-mark-up", devOps3MarkUpRouter);
-app.use("/caloricExpenditure", caloricExpenditureRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
