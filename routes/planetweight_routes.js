@@ -1,11 +1,10 @@
 var express = require('express');
 const {join} = require("node:path");
 var router = express.Router();
-express.static("/", undefined)
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendFile(join(__dirname, '../public/html/index.html'))
+  res.sendFile(join(__dirname, ''))
 });
 
 

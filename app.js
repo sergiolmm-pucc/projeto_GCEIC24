@@ -25,6 +25,8 @@ var roiRouter = require("./routes/roi-devops14");
 var temperatureRouter = require("./routes/temperature");
 var tmbRouter = require("./routes/tmb.routes");
 
+var planetweightrouter = require("./routes/planetweight_routes.js")
+
 var app = express();
 
 // view engine setup
@@ -58,6 +60,8 @@ app.use("/SDI", SDIRouter);
 
 app.use("/temperature", temperatureRouter);
 app.use("/tmb", tmbRouter);
+
+app.use("/planetweight",planetweightrouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
