@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+var fs = require("fs");
 
 // Validação dos valores de entrada
 // TODO: Verificar se funciona com o Gitch
@@ -25,7 +26,15 @@ var router = express.Router();
 
 // Rota para verificar a integridade
 router.get("/", (_, res) => {
-  return res.send("Hello from api PESIII24 - cálculo do ROI");
+  fs.readFile("./public/html/roi-devops14.html", function (err, html) {
+    if (err) {
+      throw err;
+    } else {
+      res.writeHeader(200, { "Content-Type": "text/html" });
+      res.write(html);
+      res.end();
+    }
+  });
 });
 
 // Rota para calcular o ROI
