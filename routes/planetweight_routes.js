@@ -3,7 +3,7 @@ const {join} = require("node:path");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res,) {
   res.sendFile(join(__dirname, '../public/html/planetweight.html'))
 });
 
