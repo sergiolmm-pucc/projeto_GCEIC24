@@ -1,10 +1,18 @@
 var express = require("express");
-const { join } = require("node:path");
 var router = express.Router();
+var fs = require("fs");
 
 /* GET home page. */
 router.get("/", function(_req, res) {
-  res.sendFile(join(__dirname, "../public/html/planetweight.html"));
+  fs.readFile("./public/html/planetweight.html", function(err, html) {
+    if (err) {
+      throw err;
+    } else {
+      res.writeHeader(200, { "Content-Type": "text/html" });
+      res.write(html);
+      res.end();
+    }
+  });
 });
 
 // Body	Multiple of Earth’s Gravity
