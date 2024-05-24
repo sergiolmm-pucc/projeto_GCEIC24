@@ -7,7 +7,7 @@ form.addEventListener("submit", async (event) => {
   const retorno = document.getElementById("retorno").value;
 
   const response = await fetch(
-    `http://localhost:${process.env.PORT || "3000"}/roi/calcular`,
+    `/roi/calcular`,
     {
       method: "POST",
       headers: {
