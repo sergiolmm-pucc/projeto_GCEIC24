@@ -4,9 +4,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendFile(join(__dirname, ''))
+  res.sendFile(join(__dirname, '../public/html/planetweight.html'))
 });
 
+// router.get('/', function(req, res, next) {
+//   res.sendFile("../public/html/geomcalcIndex.html")
+// });
 
 
 

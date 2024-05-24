@@ -5,7 +5,7 @@ async function calculateWeight(planet) {
         return;
     }
 
-    const response = await fetch(`/${planet}`, {
+    const response = await fetch(`/planetweight/${planet}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
