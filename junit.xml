@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="12" failures="0" errors="0" time="0.167">
-  <testsuite name="CaloricExpenditureService" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:09:19" time="0.111" tests="10">
-    <testcase classname="CaloricExpenditureService calculates caloric expenditure for a male" name="CaloricExpenditureService calculates caloric expenditure for a male" time="0.001">
+<testsuites name="jest tests" tests="14" failures="0" errors="0" time="0.301">
+  <testsuite name="CaloricExpenditureService" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:44:32" time="0.195" tests="10">
+    <testcase classname="CaloricExpenditureService calculates caloric expenditure for a male" name="CaloricExpenditureService calculates caloric expenditure for a male" time="0.002">
     </testcase>
     <testcase classname="CaloricExpenditureService calculates caloric expenditure for a female" name="CaloricExpenditureService calculates caloric expenditure for a female" time="0">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if gender is missing" name="CaloricExpenditureService throws error if gender is missing" time="0.004">
+    <testcase classname="CaloricExpenditureService throws error if gender is missing" name="CaloricExpenditureService throws error if gender is missing" time="0.005">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if gender is invalid" name="CaloricExpenditureService throws error if gender is invalid" time="0.001">
+    <testcase classname="CaloricExpenditureService throws error if gender is invalid" name="CaloricExpenditureService throws error if gender is invalid" time="0">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if weight is missing" name="CaloricExpenditureService throws error if weight is missing" time="0">
+    <testcase classname="CaloricExpenditureService throws error if weight is missing" name="CaloricExpenditureService throws error if weight is missing" time="0.001">
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if age is missing" name="CaloricExpenditureService throws error if age is missing" time="0.001">
     </testcase>
@@ -22,11 +22,17 @@
     <testcase classname="CaloricExpenditureService throws error if age exceeds the maximum limit" name="CaloricExpenditureService throws error if age exceeds the maximum limit" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="Teste exemplo IRRF" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:09:20" time="0.021" tests="1">
-    <testcase classname="Teste exemplo IRRF Função calcularIRRF" name="Teste exemplo IRRF Função calcularIRRF" time="0.001">
+  <testsuite name="CaloricExpenditureController" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:44:32" time="0.03" tests="2">
+    <testcase classname="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" name="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" time="0.002">
+    </testcase>
+    <testcase classname="CaloricExpenditureController returns 500 for internal server error" name="CaloricExpenditureController returns 500 for internal server error" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:09:20" time="0.016" tests="1">
+  <testsuite name="Teste exemplo IRRF" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:44:32" time="0.032" tests="1">
+    <testcase classname="Teste exemplo IRRF Função calcularIRRF" name="Teste exemplo IRRF Função calcularIRRF" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:44:32" time="0.019" tests="1">
     <testcase classname="Teste exemplo 1 Funcao calcularArea" name="Teste exemplo 1 Funcao calcularArea" time="0.001">
     </testcase>
   </testsuite>
