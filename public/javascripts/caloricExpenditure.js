@@ -17,7 +17,9 @@ function handleSubmit(event) {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error("Erro ao enviar dados!");
+        return response.json().then((data) => {
+          throw new Error(data.message); 
+        });
       }
     })
     .then((data) => {
