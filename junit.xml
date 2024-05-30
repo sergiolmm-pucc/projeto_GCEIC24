@@ -1,38 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="14" failures="0" errors="0" time="0.301">
-  <testsuite name="CaloricExpenditureService" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:44:32" time="0.195" tests="10">
+<testsuites name="jest tests" tests="15" failures="1" errors="0" time="0.657">
+  <testsuite name="CaloricExpenditureService" errors="0" failures="0" skipped="0" timestamp="2024-05-30T18:52:00" time="0.375" tests="10">
     <testcase classname="CaloricExpenditureService calculates caloric expenditure for a male" name="CaloricExpenditureService calculates caloric expenditure for a male" time="0.002">
     </testcase>
-    <testcase classname="CaloricExpenditureService calculates caloric expenditure for a female" name="CaloricExpenditureService calculates caloric expenditure for a female" time="0">
+    <testcase classname="CaloricExpenditureService calculates caloric expenditure for a female" name="CaloricExpenditureService calculates caloric expenditure for a female" time="0.001">
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if gender is missing" name="CaloricExpenditureService throws error if gender is missing" time="0.005">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if gender is invalid" name="CaloricExpenditureService throws error if gender is invalid" time="0">
+    <testcase classname="CaloricExpenditureService throws error if gender is invalid" name="CaloricExpenditureService throws error if gender is invalid" time="0.001">
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if weight is missing" name="CaloricExpenditureService throws error if weight is missing" time="0.001">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if age is missing" name="CaloricExpenditureService throws error if age is missing" time="0.001">
+    <testcase classname="CaloricExpenditureService throws error if age is missing" name="CaloricExpenditureService throws error if age is missing" time="0">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if weight is invalid" name="CaloricExpenditureService throws error if weight is invalid" time="0">
+    <testcase classname="CaloricExpenditureService throws error if weight is invalid" name="CaloricExpenditureService throws error if weight is invalid" time="0.001">
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if age is invalid" name="CaloricExpenditureService throws error if age is invalid" time="0">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if weight exceeds the maximum limit" name="CaloricExpenditureService throws error if weight exceeds the maximum limit" time="0.001">
+    <testcase classname="CaloricExpenditureService throws error if weight exceeds the maximum limit" name="CaloricExpenditureService throws error if weight exceeds the maximum limit" time="0">
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if age exceeds the maximum limit" name="CaloricExpenditureService throws error if age exceeds the maximum limit" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="CaloricExpenditureController" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:44:32" time="0.03" tests="2">
-    <testcase classname="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" name="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" time="0.002">
+  <testsuite name="CaloricExpenditureController" errors="0" failures="0" skipped="0" timestamp="2024-05-30T18:52:00" time="0.053" tests="2">
+    <testcase classname="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" name="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" time="0.003">
     </testcase>
     <testcase classname="CaloricExpenditureController returns 500 for internal server error" name="CaloricExpenditureController returns 500 for internal server error" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="Teste exemplo IRRF" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:44:32" time="0.032" tests="1">
-    <testcase classname="Teste exemplo IRRF Função calcularIRRF" name="Teste exemplo IRRF Função calcularIRRF" time="0">
+  <testsuite name="Teste exemplo IRRF" errors="0" failures="0" skipped="0" timestamp="2024-05-30T18:52:00" time="0.048" tests="1">
+    <testcase classname="Teste exemplo IRRF Função calcularIRRF" name="Teste exemplo IRRF Função calcularIRRF" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-05-26T13:44:32" time="0.019" tests="1">
+  <testsuite name="Teste SDI - Simulador de Investimento" errors="0" failures="1" skipped="0" timestamp="2024-05-30T18:52:00" time="0.054" tests="1">
+    <testcase classname="Teste SDI - Simulador de Investimento Funcao Simulador de Investimento Seguro" name="Teste SDI - Simulador de Investimento Funcao Simulador de Investimento Seguro" time="0">
+      <failure>TypeError: InvetimentoSeguro is not a function
+    at Object.InvetimentoSeguro (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\test\SDI.test.js:6:16)
+    at Promise.then.completed (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:316:40)
+    at _runTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-runner\build\runTest.js:444:34)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-05-30T18:52:00" time="0.044" tests="1">
     <testcase classname="Teste exemplo 1 Funcao calcularArea" name="Teste exemplo 1 Funcao calcularArea" time="0.001">
     </testcase>
   </testsuite>
