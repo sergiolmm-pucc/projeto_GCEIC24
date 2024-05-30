@@ -82,7 +82,7 @@ const { Options } = require('selenium-webdriver/chrome');
 
 
     // Verificação dos botões
-    const calculaButton = await driver.findElement(By.name('calcular'));
+    const calculaButton = await driver.findElement(By.id('calcular'));
     // Verifica se os botões estão visíveis
     if ( (await calculaButton.isDisplayed()) ) {
       console.log('Passou: Botões de impostos estão visíveis');
