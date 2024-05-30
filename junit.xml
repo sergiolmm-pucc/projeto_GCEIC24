@@ -35,19 +35,19 @@
   <testsuite name="Teste SDI - Simulador de Investimento" errors="0" failures="1" skipped="0" timestamp="2024-05-30T18:52:00" time="0.054" tests="1">
     <testcase classname="Teste SDI - Simulador de Investimento Funcao Simulador de Investimento Seguro" name="Teste SDI - Simulador de Investimento Funcao Simulador de Investimento Seguro" time="0">
       <failure>TypeError: InvetimentoSeguro is not a function
-    at Object.InvetimentoSeguro (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\test\SDI.test.js:6:16)
-    at Promise.then.completed (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\utils.js:298:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\utils.js:231:10)
-    at _callCircusTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:316:40)
-    at _runTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:252:3)
-    at _runTestsForDescribeBlock (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:126:9)
-    at _runTestsForDescribeBlock (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:121:9)
-    at run (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:71:3)
-    at runAndTransformResultsToJestFormat (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
-    at jestAdapter (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
-    at runTestInternal (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-runner\build\runTest.js:367:16)
-    at runTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-runner\build\runTest.js:444:34)</failure>
+        at Object.InvetimentoSeguro (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\test\SDI.test.js:6:16)
+        at Promise.then.completed (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\utils.js:298:28)
+        at new Promise (&lt;anonymous&gt;)
+        at callAsyncCircusFn (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\utils.js:231:10)
+        at _callCircusTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:316:40)
+        at _runTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:252:3)
+        at _runTestsForDescribeBlock (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:126:9)
+        at _runTestsForDescribeBlock (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:121:9)
+        at run (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\run.js:71:3)
+        at runAndTransformResultsToJestFormat (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+        at jestAdapter (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+        at runTestInternal (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-runner\build\runTest.js:367:16)
+        at runTest (C:\Users\Eric Abib\PycharmProjects\projeto_GCEIC242\node_modules\jest-runner\build\runTest.js:444:34)</failure>
     </testcase>
   </testsuite>
   <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-05-30T18:52:00" time="0.044" tests="1">

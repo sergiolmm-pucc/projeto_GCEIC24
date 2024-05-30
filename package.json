@@ -9,7 +9,8 @@
     "F-test": "node ./test/FuncionalExemplo",
     "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
     "irrf-test": "node ./test/irrfFuncional",
-    "SDI-test": "node ./test/SDIfuncional"
+    "SDI-test": "node ./test/SDIfuncional",
+    "tmb-test": "node ./test/tmbFuncional"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
