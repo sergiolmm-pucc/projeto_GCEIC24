@@ -8,7 +8,8 @@
     "test": "jest -ci --reportes=default --reporters=jest-junit",
     "F-test": "node ./test/FuncionalExemplo",
     "irrf-test": "node ./test/irrfFuncional",
-    "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional"
+    "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
+    "SDI-test": "node ./test/SDIfuncional"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
