@@ -71,7 +71,7 @@ const { Options } = require("selenium-webdriver/chrome");
         });
 
 
-        await driver.findElement(By.id("botao")).click();
+        await driver.findElement(By.tagName("button")).click();
 
         await driver.wait(until.elementIsVisible(driver.findElement(By.id("resultado"))), 10000);
 
