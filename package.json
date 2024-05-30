@@ -7,8 +7,8 @@
     "lint": "eslint './routes/**/*.js?(x)'",
     "test": "jest -ci --reportes=default --reporters=jest-junit",
     "F-test": "node ./test/FuncionalExemplo",
-    "irrf-test": "node ./test/irrfFuncional",
     "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
+    "irrf-test": "node ./test/irrfFuncional",
     "SDI-test": "node ./test/SDIfuncional"
   },
   "dependencies": {
