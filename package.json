@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "lint": "eslint './routes/**/*.js?(x)'",
-    "test": "jest -ci --reportes=default --reporters=jest-junit",
+    "test": "jest -ci --reporters=default --reporters=jest-junit",
     "F-test": "node ./test/FuncionalExemplo",
     "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
     "irrf-test": "node ./test/irrfFuncional",
