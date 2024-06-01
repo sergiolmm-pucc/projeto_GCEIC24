@@ -101,6 +101,9 @@ jobs:
       - name: Run teste SDI Funcional no glitch
         run: npm run SDI-test
       
+      - name: Run teste TMB Funcional no glitch
+        run: npm run tmb-test
+      
       # - name: lista work directory
       #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24
       # - name: lista work directory
