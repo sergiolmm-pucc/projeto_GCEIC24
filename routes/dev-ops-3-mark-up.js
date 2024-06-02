@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
 const z = require("zod");
+const fs = require("fs");
 
 const schema = z.object({
   cp: z.number().positive(),
@@ -10,7 +10,7 @@ const schema = z.object({
   ml: z.number().positive(),
 });
 
-router.get("/", (req, res) => {
+router.get("/", (_req, res) => {
   fs.readFile("./public/html/dev-ops-3-mark-up.html", function(err, html) {
     if (err) {
       throw err;
@@ -26,11 +26,11 @@ router.post("/", (req, res) => {
   console.log(req.body);
   try {
     const { cp, df, dv, ml } = schema.parse(req.body);
-    console.log(req.body.df);
+    // console.log(req.body.df);
     const mk = calculoMarkUp(df, dv, ml);
     const cf = cp * mk;
-    console.log(mk);
-    console.log(cf);
+    // console.log(mk);
+    // console.log(cf);
     res.status(200).json({
       mk: Math.round(mk * 100) / 100,
       cf: Math.round(cf * 100) / 100,

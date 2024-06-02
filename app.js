@@ -4,17 +4,28 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var geomcalcRouter = require("./routes/geomcalcRouter");
 var exampleRouter = require("./routes/example");
-var irrfRouter = require('./routes/irrf.routes');
-var calculadoraRouter = require('./routes/calculadora');
-var devOps3MarkUpRouter = require('./routes/dev-ops-3-mark-up');
-var temperatureRouter = require('./routes/temperature');
-var caloricExpenditureRouter = require('./routes/caloricExpendieture');
 
+var calculadoraRouter = require("./routes/calculadora");
+var caloricExpenditureRouter = require("./routes/caloricExpendieture");
+
+var devOps3MarkUpRouter = require("./routes/dev-ops-3-mark-up");
+
+var geomcalcRouter = require("./routes/geomcalcRouter");
+
+var infsRouter = require("./routes/infsRoute");
+var irrfRouter = require("./routes/irrf.routes");
+
+var planetweightRouter = require("./routes/planetweight_routes");
+
+var roiRouter = require("./routes/roi-devops14");
+
+var SDIRouter = require("./routes/SDI");
+
+var temperatureRouter = require("./routes/temperature");
+var tmbRouter = require("./routes/tmb.routes");
 
 var app = express();
 
@@ -28,22 +39,32 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+// Definir suas rotas
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/example", exampleRouter);
 
+app.use("/calculadora", calculadoraRouter);
+app.use("/caloricExpenditure", caloricExpenditureRouter);
+
+app.use("/dev-ops-3-mark-up", devOps3MarkUpRouter);
 
 app.use("/geomcalc", geomcalcRouter);
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/irrf', irrfRouter);
-app.use('/example', exampleRouter);
-app.use('/calculadora', calculadoraRouter);
-app.use('/dev-ops-3-mark-up', devOps3MarkUpRouter);
-app.use('/temperature', temperatureRouter);
-app.use('/caloricExpenditure', caloricExpenditureRouter);
+app.use("/irrf", irrfRouter);
+app.use("/infs", infsRouter);
 
+app.use("/planetweight", planetweightRouter);
+
+app.use("/roi", roiRouter);
+
+app.use("/SDI", SDIRouter);
+
+app.use("/temperature", temperatureRouter);
+app.use("/tmb", tmbRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function(_req, _res, next) {
   next(createError(404));
 });
 

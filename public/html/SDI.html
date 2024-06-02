@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/SDI.css" />
+    <script type="text/javascript" src="../javascripts/SDI.js"></script>
+  </head>
+  <body>
+    <form action="">
+      <h1>Calculadora de investimento</h1>
+      <p>
+        Coloque seu nome: <br />
+        <input type="text" name="" id="nome" placeholder="" required />
+      </p>
+      <p>
+        Juros Mensal desejado no investimento: <br />
+        <input
+          type="number"
+          name=""
+          id="Juros"
+          placeholder="Ex.: 7% obs: n coloque a %"
+          min="1"
+          step="0.50"
+          required
+        />
+      </p>
+      <p>
+        Aporte Mensal:<br />
+        <input
+          type="number"
+          name=""
+          id="Aporte"
+          placeholder="Ex.: 20,00"
+          min="1"
+          step="0.50"
+          required
+        />
+      </p>
+      <p>
+        Quantidade de Meses:<br />
+        <input
+          type="number"
+          name=""
+          id="tempo"
+          placeholder="Ex.: 5"
+          min="1"
+          step="1"
+          required
+        />
+      </p>
+      <p>
+        <button type="button" onclick="simularinvestimento()">Simular</button>
+      </p>
+      <p id="resultado"></p>
+    </form>
+  </body>
+</html>

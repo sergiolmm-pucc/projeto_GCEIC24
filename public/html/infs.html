@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo de Imposto sobre Serviço</title>
+    <link rel="stylesheet" href="../stylesheets/infs.css" />
+  </head>
+  <body>
+    <form id="formulario-imposto">
+      <h1>Cálculo de Imposto sobre Serviço</h1>
+      <input
+        class="TextInput"
+        type="text"
+        id="price"
+        placeholder="Valor do Serviço"
+      />
+      <input
+        class="TextInput"
+        type="text"
+        id="tax"
+        placeholder="Alíquota (%)"
+      />
+      <input class="SubmitInput" type="submit" value="Calcular" />
+    </form>
+    <div id="resultado" class="result" style="display: none;"></div>
+
+    <script>
+      document
+        .getElementById("formulario-imposto")
+        .addEventListener("submit", async function(event) {
+          event.preventDefault();
+
+          const price = parseFloat(document.getElementById("price").value);
+          const tax = parseFloat(document.getElementById("tax").value);
+
+          if (isNaN(price) || isNaN(tax)) {
+            alert(
+              "Por favor, insira valores válidos para o valor do serviço e a alíquota."
+            );
+            return;
+          }
+
+          try {
+            const response = await fetch("/infs", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                price: price,
+                tax: tax,
+              }),
+            });
+
+            if (response.ok) {
+              const result = await response.json();
+              const resultadoDiv = document.getElementById("resultado");
+              resultadoDiv.innerHTML = `
+                        <p>O valor do imposto é: R$ ${result.imposto}</p>
+                        <p>O valor final do serviço é: R$ ${result.valorFinal}</p>
+                    `;
+              resultadoDiv.style.display = "block";
+            } else {
+              console.error("Erro ao calcular o imposto:", response.statusText);
+            }
+          } catch (error) {
+            console.error("Erro ao calcular o imposto:", error);
+          }
+        });
+    </script>
+  </body>
+</html>
