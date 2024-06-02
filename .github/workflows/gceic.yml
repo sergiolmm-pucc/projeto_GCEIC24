@@ -1,33 +1,32 @@
 name: Projeto Final GCEIC 2024
 on: [push]
 jobs:
- # info:
- #   runs-on: ubuntu-latest
- #   steps:
- #     - name: Gera siada do Github context
- #       run: echo "${{ toJSON(github) }}"
- #     - name : Mostra mensagem
- #       run: echo "Alo turma"
- #     - name :  Lista diretorio
- #       run: ls -la 
-  
+  # info:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Gera siada do Github context
+  #       run: echo "${{ toJSON(github) }}"
+  #     - name : Mostra mensagem
+  #       run: echo "Alo turma"
+  #     - name :  Lista diretorio
+  #       run: ls -la
+
   getCode:
     runs-on: ubuntu-latest
     steps:
-      - name:  Get code from repositori to evaluate
+      - name: Get code from repositori to evaluate
         uses: actions/checkout@v3
       - name: lista diretorio
-        run: ls -la 
+        run: ls -la
       - name: desce um diretorio
-        run: cd ..  
-      - name: lista 
-        run: ls -la 
+        run: cd ..
+      - name: lista
+        run: ls -la
 
       - name: lista work directory
         run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24
       - name: lista work directory
         run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos
-
 
   test:
     needs: getCode
@@ -40,24 +39,24 @@ jobs:
       - name: Get Code from repository
         uses: actions/checkout@v3
       - name: Install NodeJS
-        uses: actions/setup-node@v3	
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Instala Dependencias
         run: npm ci
       - name: Run Lint
-        run: npm run lint 
+        run:
+          npm run lint
           # aqui uma entrada para cada teste
       - name: Roda os testes
         run: npm test
       - name: Gera o Relatório dos testes
         uses: dorny/test-reporter@v1
-        if: success() || failure()  # roda de qualquer maneira
+        if: success() || failure() # roda de qualquer maneira
         with:
           name: JEST tests
           path: j*.xml
           reporter: jest-junit
-
 
   Deploy:
     needs: test
@@ -68,8 +67,8 @@ jobs:
       - name: Faz sincronismo com o Glitch
         uses: kanadgupta/glitch-sync@v3.0.1
         with:
-            auth-token: '${{ secrets.authToken }}'
-            project-id: '${{ secrets.projectId }}'
+          auth-token: "${{ secrets.authToken }}"
+          project-id: "${{ secrets.projectId }}"
 
   Funcional:
     needs: Deploy
@@ -83,12 +82,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install NodeJS
-        uses: actions/setup-node@v3	
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Instala Dependencias
-        run: npm ci        
-      
+        run: npm ci
+
       - name: Run teste Exemplo Funcional no glitch
         run: npm run F-test
 
@@ -97,32 +96,32 @@ jobs:
 
       - name: Run teste IRRF Funcional no glitch
         run: npm run irrf-test
-        
+
       - name: Run teste SDI Funcional no glitch
         run: npm run SDI-test
-      
+
       - name: Run teste TMB Funcional no glitch
         run: npm run tmb-test
-      
+
       # - name: lista work directory
       #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24
       # - name: lista work directory
-      #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos      
+      #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos
       # - name: lista work directory
-      #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos/exemplo      
+      #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos/exemplo
       #
       # - name: fotos da tela
       #   uses: actions/upload-artifact@v4
       #   with:
       #     name: Fotos dos testes
-      #     # Path to the release files          
+      #     # Path to the release files
       #     # Gravar as fotos na raiz do projeto no docker
-      #     path: /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos/exemplo/*.png  
+      #     path: /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos/exemplo/*.png
 
       - name: fotos da tela
         uses: actions/upload-artifact@v4
         with:
           name: Fotos dos testes
-          # Path to the release files          
+          # Path to the release files
           # Gravar as fotos na raiz do projeto no docker
-          path: /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos/**/*.png  
+          path: /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos/**/*.png
