@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const z = require("zod");
 const fs = require("fs");
+const {
+  calculoMarkUp,
+  precoProdutoFinal,
+} = require("../services/dev-ops-3-mark-up-services");
 
 const schema = z.object({
   cp: z.number().positive(),
@@ -23,12 +27,13 @@ router.get("/", (_req, res) => {
 });
 
 router.post("/", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   try {
     const { cp, df, dv, ml } = schema.parse(req.body);
     // console.log(req.body.df);
     const mk = calculoMarkUp(df, dv, ml);
-    const cf = cp * mk;
+    // console.log(mk);
+    const cf = precoProdutoFinal(cp, mk);
     // console.log(mk);
     // console.log(cf);
     res.status(200).json({
@@ -42,6 +47,7 @@ router.post("/", (req, res) => {
         error: err,
       });
     } else {
+      // console.log(err);
       res.status(500).json({
         message: "Internal Server Error",
         error: err,
@@ -49,9 +55,5 @@ router.post("/", (req, res) => {
     }
   }
 });
-
-function calculoMarkUp(df, dv, ml) {
-  return 100 / (100 - (df + dv + ml));
-}
 
 module.exports = router;

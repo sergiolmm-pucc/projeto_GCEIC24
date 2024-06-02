@@ -17,58 +17,50 @@
       peso, altura, sexo e nível de atividade física.
     </p>
 
-    <form id="tmbForm">
-      <label for="altura">Altura (cm):</label>
-      <input
-        id="altura"
-        name="altura"
-        type="number"
-        min="1"
-        required
-      /><br /><br />
+    <label for="altura">Altura (cm):</label>
+    <input
+      id="altura"
+      name="altura"
+      type="number"
+      min="1"
+      required
+    /><br /><br />
 
-      <label for="peso">Peso (kg):</label>
-      <input id="peso" name="peso" type="number" min="1" required /><br /><br />
+    <label for="peso">Peso (kg):</label>
+    <input id="peso" name="peso" type="number" min="1" required /><br /><br />
 
-      <label for="idade">Idade:</label>
-      <input
-        id="idade"
-        name="idade"
-        type="number"
-        min="1"
-        required
-      /><br /><br />
+    <label for="idade">Idade:</label>
+    <input id="idade" name="idade" type="number" min="1" required /><br /><br />
 
-      <label for="atividade">Atividade Física:</label>
-      <select id="atividade" name="atividade" required>
-        <option value="sedentario"
-          >Sedentário (pouco ou nenhum exercício)</option
-        >
-        <option value="leve"
-          >Levemente ativo (exercício leve 1 a 3 dias por semana)</option
-        >
-        <option value="moderado"
-          >Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por
-          semana)</option
-        >
-        <option value="ativo"
-          >Altamente ativo (exercício pesado de 5 a 6 dias por semana)</option
-        >
-        <option value="extremo"
-          >Extremamente ativo (exercício pesado diariamente e até 2 vezes por
-          dia)</option
-        > </select
-      ><br /><br />
+    <label for="atividade">Atividade Física:</label>
+    <select id="atividade" name="atividade" required>
+      <option value="sedentario">Sedentário (pouco ou nenhum exercício)</option>
+      <option value="leve"
+        >Levemente ativo (exercício leve 1 a 3 dias por semana)</option
+      >
+      <option value="moderado"
+        >Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por
+        semana)</option
+      >
+      <option value="ativo"
+        >Altamente ativo (exercício pesado de 5 a 6 dias por semana)</option
+      >
+      <option value="extremo"
+        >Extremamente ativo (exercício pesado diariamente e até 2 vezes por
+        dia)</option
+      > </select
+    ><br /><br />
 
-      <label>Gênero:</label><br />
-      <input type="radio" id="homem" name="genero" value="homem" required />
-      <label for="homem">Homem</label><br />
+    <label>Gênero:</label><br />
+    <input type="radio" id="homem" name="genero" value="homem" required />
+    <label for="homem">Homem</label><br />
 
-      <input type="radio" id="mulher" name="genero" value="mulher" required />
-      <label for="mulher">Mulher</label><br /><br />
+    <input type="radio" id="mulher" name="genero" value="mulher" required />
+    <label for="mulher">Mulher</label><br /><br />
 
-      <button type="submit">Calcular TMB</button>
-    </form>
+    <button id="botao" type="submit" onclick="apertarBotao();">
+      Calcular TMB
+    </button>
     <br />
 
     <div id="resultado"></div>

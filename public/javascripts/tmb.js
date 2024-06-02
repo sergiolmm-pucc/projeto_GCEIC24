@@ -1,46 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-  document
-    .getElementById("tmbForm")
-    .addEventListener("submit", function(event) {
-      event.preventDefault();
+// Função para ser chamada no clique do botão
+function apertarBotao() {
+  // Obtém os valores do formulário
+  const altura = parseFloat(document.getElementById("altura").value);
+  const peso = parseFloat(document.getElementById("peso").value);
+  const idade = parseInt(document.getElementById("idade").value);
+  const genero = document.querySelector('input[name="genero"]:checked').value;
+  const atividade = document.getElementById("atividade").value;
 
-      // Obtém os valores do formulário
-      const altura = parseFloat(document.getElementById("altura").value);
-      const peso = parseFloat(document.getElementById("peso").value);
-      const idade = parseInt(document.getElementById("idade").value);
-      const genero = document.querySelector('input[name="genero"]:checked')
-        .value;
-      const atividade = document.getElementById("atividade").value;
+  if (altura <= 0 || peso <= 0 || idade <= 0) {
+    alert(
+      "Por favor, insira valores positivos e maiores que 1 para altura, peso e idade."
+    );
+    return;
+  }
 
-      if (altura <= 0 || peso <= 0 || idade <= 0) {
-        alert(
-          "Por favor, insira valores positivos e maiores que 1 para altura, peso e idade."
-        );
-        return;
-      }
+  // Calcula a TMB baseando-se no gênero
+  let tmb;
+  if (genero === "homem") {
+    tmb = calcularTMBHomem(peso, altura, idade);
+  } else {
+    tmb = calcularTMBMulher(peso, altura, idade);
+  }
 
-      // Calcula a TMB baseando-se no gênero
-      let tmb;
-      if (genero === "homem") {
-        tmb = calcularTMBHomem(peso, altura, idade);
-      } else {
-        tmb = calcularTMBMulher(peso, altura, idade);
-      }
+  // Calcula o fator de atividade física
+  const fatorAtividade = calcularFatorAtividade(atividade);
 
-      // Calcula o fator de atividade física
-      const fatorAtividade = calcularFatorAtividade(atividade);
+  // Calcula a TMB total considerando o fator de atividade física
+  const tmbTotal = tmb * fatorAtividade;
 
-      // Calcula a TMB total considerando o fator de atividade física
-      const tmbTotal = tmb * fatorAtividade;
-
-      // Exibe o resultado
-      document.getElementById(
-        "resultado"
-      ).innerText = `Sua Taxa Metabólica Basal (TMB) é: ${tmbTotal.toFixed(
-        2
-      )} calorias por dia.`;
-    });
-});
+  // Exibe o resultado
+  document.getElementById(
+    "resultado"
+  ).innerText = `Sua Taxa Metabólica Basal (TMB) é: ${tmbTotal.toFixed(
+    2
+  )} calorias por dia.`;
+}
 
 function calcularFatorAtividade(atividade) {
   let fatorAtividade;
