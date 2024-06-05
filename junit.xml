@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" errors="0" time="0.417">
-  <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-05-17T18:39:04" time="0.373" tests="1">
-    <testcase classname="Teste exemplo 1 Funcao calcularArea" name="Teste exemplo 1 Funcao calcularArea" time="0.001">
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="0.452">
+  <testsuite name="Função calcularImposto" errors="0" failures="0" skipped="0" timestamp="2024-06-04T01:54:23" time="0.364" tests="3">
+    <testcase classname="Função calcularImposto deve calcular o imposto e o valor final corretamente" name="Função calcularImposto deve calcular o imposto e o valor final corretamente" time="0.002">
+    </testcase>
+    <testcase classname="Função calcularImposto deve retornar 0 de imposto e valor final igual ao preço quando a alíquota é 0" name="Função calcularImposto deve retornar 0 de imposto e valor final igual ao preço quando a alíquota é 0" time="0.001">
+    </testcase>
+    <testcase classname="Função calcularImposto deve lançar um erro se os parâmetros não forem números" name="Função calcularImposto deve lançar um erro se os parâmetros não forem números" time="0.011">
     </testcase>
   </testsuite>
 </testsuites>
