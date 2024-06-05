@@ -24,7 +24,7 @@ var roiRouter = require("./routes/roi-devops14");
 
 var SDIRouter = require("./routes/SDI");
 
-var temperatureRouter = require("./routes/temperature");
+var {temperatureRouter} = require("./routes/temperature");
 var tmbRouter = require("./routes/tmb.routes");
 
 var app = express();

@@ -1,10 +1,17 @@
 const express = require("express");
-const router = express.Router();
+const temperatureRouter = express.Router();
 const fs = require("fs");
 
 // Funções para converter temperaturas
 
 function convertFromCelsius(celsius) {
+  if (celsius === undefined) {
+    throw new Error('Todos os parâmetros devem ser fornecidos.');
+  }
+  if (isNaN(celsius)) {
+    throw new Error('Parâmetros invalidos');
+  }
+
   return {
     celsius: celsius,
     fahrenheit: (celsius * 9) / 5 + 32,
@@ -13,6 +20,13 @@ function convertFromCelsius(celsius) {
 }
 
 function convertFromFahrenheit(fahrenheit) {
+
+  if (fahrenheit === undefined) {
+    throw new Error('Todos os parâmetros devem ser fornecidos.');
+  }
+  if (isNaN(fahrenheit)) {
+    throw new Error('Parâmetros invalidos');
+  }
   return {
     celsius: ((fahrenheit - 32) * 5) / 9,
     fahrenheit: fahrenheit,
@@ -21,6 +35,13 @@ function convertFromFahrenheit(fahrenheit) {
 }
 
 function convertFromKelvin(kelvin) {
+  if (kelvin === undefined) {
+    throw new Error('Todos os parâmetros devem ser fornecidos.');
+  }
+  if (isNaN(kelvin)) {
+    throw new Error('Parâmetros invalidos');
+  }
+  
   return {
     celsius: kelvin - 273,
     fahrenheit: ((kelvin - 273) * 9) / 5 + 32,
@@ -28,7 +49,7 @@ function convertFromKelvin(kelvin) {
   };
 }
 
-router.get("/", (_req, res) => {
+temperatureRouter.get("/", (_req, res) => {
   fs.readFile("./public/html/temperature.html", function(err, html) {
     if (err) {
       throw err;
@@ -40,7 +61,7 @@ router.get("/", (_req, res) => {
   });
 });
 
-router.get("/convert", (req, res) => {
+temperatureRouter.get("/convert", (req, res) => {
   const temp = parseFloat(req.query.temp);
   const tempType = req.query.tempType;
 
@@ -63,4 +84,4 @@ router.get("/convert", (req, res) => {
   res.json(result);
 });
 
-module.exports = router;
+module.exports = {temperatureRouter, convertFromCelsius, convertFromFahrenheit, convertFromKelvin};
