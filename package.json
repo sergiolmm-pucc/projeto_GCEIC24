@@ -11,7 +11,8 @@
     "irrf-test": "node ./test/irrfFuncional",
     "SDI-test": "node ./test/SDIfuncional",
     "tmb-test": "node ./test/tmbFuncional",
-    "e2e-test": "node ./test/impostoFuncional"
+    "e2e-test": "node ./test/impostoFuncional",
+    "geomcalcTest": "mocha ./test/geomcalcTest.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -22,8 +23,10 @@
     "jade": "~1.11.0",
     "jest": "^29.7.0",
     "jest-junit": "^16.0.0",
+    "jsdom": "^24.1.0",
     "junit": "^1.4.9",
     "lint": "^0.8.19",
+    "mocha": "^10.4.0",
     "morgan": "~1.9.1",
     "selenium-webdriver": "^4.21.0",
     "zod": "^3.23.8"
