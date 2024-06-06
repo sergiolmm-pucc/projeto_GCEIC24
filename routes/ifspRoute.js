@@ -9,6 +9,7 @@ router.use(express.urlencoded({ extended: true }));
 router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '..', 'public', 'html', 'ifsp.html'));
 });
+
   
 // Rota para calcular o imposto
 router.post('/', (req, res) => {
@@ -22,3 +23,4 @@ router.post('/', (req, res) => {
 
 
 module.exports = router;
+
