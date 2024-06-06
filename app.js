@@ -29,6 +29,8 @@ var tmbRouter = require("./routes/tmb.routes");
 
 var contForcaRouter = require("./routes/contForca");
 
+var etecRouter = require("./routes/etec.routes");
+
 var app = express();
 
 // view engine setup
@@ -66,6 +68,8 @@ app.use("/temperature", temperatureRouter);
 app.use("/tmb", tmbRouter);
 
 app.use("/contForca",contForcaRouter);
+
+app.use("/etec", etecRouter);
 
 // catch 404 and forward to error handler
 app.use(function(_req, _res, next) {
