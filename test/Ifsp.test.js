@@ -1,6 +1,6 @@
 const { calcularImposto } = require('../public/javascripts/ifsp');
 
-describe('Teste calcularImposto', () => {
+describe('Teste ifsp - calcularImposto', () => {
 
     test('Cálculo de imposto e preço final', () => {
         const resultado = calcularImposto(100, 20);
