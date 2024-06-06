@@ -10,7 +10,8 @@
     "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
     "irrf-test": "node ./test/irrfFuncional",
     "SDI-test": "node ./test/SDIfuncional",
-    "tmb-test": "node ./test/tmbFuncional"
+    "tmb-test": "node ./test/tmbFuncional",
+    "e2e-test": "node ./test/impostoFuncional"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
