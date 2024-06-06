@@ -6,7 +6,9 @@
     "start": "node ./bin/www",
     "lint": "eslint './routes/**/*.js?(x)'",
     "test": "jest --ci --reporters=default --reporters=jest-junit",
+    
     "F-test": "node ./test/FuncionalExemplo",
+   
     "e2e-test": "start-server-and-test start http://localhost:4000 test"
   },
   "dependencies": {
