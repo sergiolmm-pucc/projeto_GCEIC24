@@ -1,9 +1,18 @@
-const { calcularNovoPeso } = require('../public/javascripts/contForca')
 
-describe('Teste Função Calcular Novo Peso', () => {
+const { calcularNovoPeso } = require('../public/javascripts/contForca');
 
-    test('65kg Remada Curvada Facil', ()=>{
+global.document = {
+  getElementById: jest.fn().mockImplementation((id) => {
+    return {
+      addEventListener: jest.fn(),
+      value: '100',
+      innerText: ''
+    };
+  })
+};
+
+describe('calcularNovoPeso', () => {
+    test('65kg Remada Curvada Fácil', () => {
         expect(calcularNovoPeso(65, 1.07, 1.05)).toBe(73);
     });
-
 });
