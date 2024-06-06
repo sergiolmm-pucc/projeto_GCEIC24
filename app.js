@@ -10,7 +10,7 @@ var exampleRouter = require("./routes/example");
 
 var calculadoraRouter = require("./routes/calculadora");
 var caloricExpenditureRouter = require("./routes/caloricExpendieture");
-
+var ifspRouter = require('./routes/ifspRoute');
 var devOps3MarkUpRouter = require("./routes/dev-ops-3-mark-up");
 
 var geomcalcRouter = require("./routes/geomcalcRouter");
@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/example", exampleRouter);
-
+app.use('/ifsp', ifspRouter);
 app.use("/calculadora", calculadoraRouter);
 app.use("/caloricExpenditure", caloricExpenditureRouter);
 
