@@ -1,9 +1,9 @@
-const { contabilidadeForca } = require('../public/javascripts/contForca')
+const { calcularNovoPeso } = require('../public/javascripts/contForca')
 
-describe('Teste Função Contabilidade de Força', () => {
+describe('Teste Função Calcular Novo Peso', () => {
 
     test('65kg Remada Curvada Facil', ()=>{
-        expect(contabilidadeForca(65, 1.07, 1.05)).toBe(73);
-    })
+        expect(calcularNovoPeso(65, 1.07, 1.05)).toBe(73);
+    });
 
-})
+});

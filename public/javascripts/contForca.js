@@ -1,17 +1,17 @@
-document.addEventListener('DOMContentLoaded', function () {
-    contabilidadeForca();
-});
+function calcularNovoPeso(currentWeight, exerciseFactor, difficultyFactor) {
+    let newWeight = currentWeight * exerciseFactor * difficultyFactor;
+    return Math.round(newWeight);
+}
 
-function contabilidadeForca() {
+document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('weightForm').addEventListener('submit', function(event) {
         event.preventDefault();
         const currentWeight = parseFloat(document.getElementById('currentWeight').value);
         const exerciseFactor = parseFloat(document.getElementById('exercise').value);
         const difficultyFactor = parseFloat(document.getElementById('difficulty').value);
-        let newWeight = currentWeight * exerciseFactor * difficultyFactor;
-        newWeight = Math.round(newWeight); 
-        document.getElementById('result').innerText = `Peso sugerido para a próxima sessão: ${newWeight} kg`;
+        const newWeight = calcularNovoPeso(currentWeight, exerciseFactor, difficultyFactor);
+        document.getElementById('result').innerText = `Peso sugerido para a próxima sessão: ${newChildWeight} kg`;
     });
-}
+});
 
-module.exports = { contabilidadeForca };
+module.exports = { calcularNovoPeso, contabilidadeForca };
