@@ -11,7 +11,8 @@
     "irrf-test": "node ./test/irrfFuncional",
     "SDI-test": "node ./test/SDIfuncional",
     "tmb-test": "node ./test/tmbFuncional",
-    "e2e-test": "node ./test/impostoFuncional"
+    "e2e-test": "node ./test/impostoFuncional",
+    "contForca-test": "node ./test/contForca"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

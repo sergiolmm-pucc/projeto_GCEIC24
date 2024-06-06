@@ -27,6 +27,8 @@ var SDIRouter = require("./routes/SDI");
 var {temperatureRouter} = require("./routes/temperature");
 var tmbRouter = require("./routes/tmb.routes");
 
+var contForcaRouter = require("./routes/contForca");
+
 var app = express();
 
 // view engine setup
@@ -62,6 +64,8 @@ app.use("/SDI", SDIRouter);
 
 app.use("/temperature", temperatureRouter);
 app.use("/tmb", tmbRouter);
+
+app.use("/contForca",contForcaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(_req, _res, next) {
