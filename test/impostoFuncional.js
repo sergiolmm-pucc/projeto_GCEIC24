@@ -2,7 +2,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const { Options } = require('selenium-webdriver/chrome');
 
-describe('Testes Funcionais para Cálculo de Imposto sobre Serviço', () => {
+(async () => {
   let driver;
 
   beforeAll(async () => {
