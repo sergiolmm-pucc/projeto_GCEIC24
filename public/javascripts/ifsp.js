@@ -1,28 +1,43 @@
-document.getElementById('formulario-imposto').addEventListener('submit', async function(event) {
+function calcularImposto(price, tax) {
+    // Verifica se os valores são números válidos
+    if (isNaN(price) || isNaN(tax)) {
+        throw new Error('Valores inválidos. Por favor, insira valores numéricos.');
+    }
+
+    // Calcula o imposto
+    const imposto = price * (tax / 100);
+    const precoFinal = price + imposto;
+
+    return {
+        imposto: imposto.toFixed(2),
+        precoFinal: precoFinal.toFixed(2)
+    };
+}
+
+// Exporta a função para uso em testes
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { calcularImposto };
+}
+
+// Função para ser usada no navegador
+function handleCalcularImposto(event) {
     event.preventDefault();
 
-    const price = document.getElementById('price').value;
-    const tax = document.getElementById('tax').value;
+    const priceInput = document.getElementById('price');
+    const taxInput = document.getElementById('tax');
+
+    const price = parseFloat(priceInput.value);
+    const tax = parseFloat(taxInput.value);
 
     try {
-        const response = await fetch('/ifsp', { // Corrigido o caminho da rota
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: new URLSearchParams({
-                price: price,
-                tax: tax
-            })
-        });
-
-        if (response.ok) { // Verifica se a resposta está OK
-            const result = await response.json();
-            alert(`O valor do imposto é: R$ ${result.imposto}.\nO valor final do produto é: R$ ${result.valorFinal}`);
-        } else {
-            console.error('Erro ao calcular o imposto:', response.statusText);
-        }
+        const result = calcularImposto(price, tax);
+        alert(`Valor do Produto: R$ ${price.toFixed(2)}\nAlíquota: ${tax.toFixed(2)}%\nImposto: R$ ${result.imposto}\nPreço Final: R$ ${result.precoFinal}`);
     } catch (error) {
-        console.error('Erro ao calcular o imposto:', error);
+        alert(error.message);
     }
-});
+}
+
+// Adiciona o evento ao botão se o script estiver rodando no navegador
+if (typeof window !== 'undefined') {
+    document.querySelector('.SubmitInput').addEventListener('click', handleCalcularImposto);
+}
