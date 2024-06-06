@@ -20,7 +20,8 @@
     "e2e-test": "node ./test/impostoFuncional",
     "geomcalcTest": "mocha ./test/geomcalcTest.js",
     "geomcalcTest2": "jest",
-    "contForca-test": "node ./test/contForca"
+    "contForca-test": "node ./test/contForca",
+    "planet-test": "node ./test/planetweightFuncional.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
