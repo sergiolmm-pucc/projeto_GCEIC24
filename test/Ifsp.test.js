@@ -1,4 +1,4 @@
-const { calcularImposto } = require('../javascripts/ifsp');
+const { calcularImposto } = require('../public/javascripts/ifsp');
 
 describe('Teste calcularImposto', () => {
 
