@@ -4,32 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GeomCalc</title>
-    <script
-      type="text/javascript"
-      src="../javascripts/geomcalcRouter.js"
-    ></script>
+    <link rel="stylesheet" href="../stylesheets/geomcalcStyles.css" />
+    <script>
+      function calcularArea() {
+        const forma = document.getElementById("forma").value;
+        let area;
+
+        if (forma === "quadrado") {
+          const lado = parseFloat(document.getElementById("valorLado").value);
+          area = lado * lado;
+        } else if (forma === "circulo") {
+          const raio = parseFloat(document.getElementById("valorRaio").value);
+          area = Math.PI * raio * raio;
+        }
+
+        document.getElementById("resultado").value = area;
+      }
+
+      function mostrarCampos() {
+        const forma = document.getElementById("forma").value;
+        document.getElementById("campoQuadrado").style.display = "none";
+        document.getElementById("campoCirculo").style.display = "none";
+
+        if (forma === "quadrado") {
+          document.getElementById("campoQuadrado").style.display = "block";
+        } else if (forma === "circulo") {
+          document.getElementById("campoCirculo").style.display = "block";
+        }
+      }
+
+      window.onload = function() {
+        document.getElementById("forma").value = "quadrado";
+        mostrarCampos();
+      };
+    </script>
   </head>
   <body>
-    <h1>Cálculo de Formas Geométricas</h1>
-    <br />
-    <h2>by SLMM</h2>
-
-    <br />
-    <br />
-    tesTbase: <input type="number" name="valorBase" id="valorBase" /><br />
-    tesTaltura:
-    <input type="number" name="valorAltura" id="valorAltura" /><br />
-    area: <input type="text" name="resultado" id="resultado" /><br />
-    <button
-      id="calcula"
-      name="calcula"
-      onclick="document.getElementById('resultado').value = 
-         calcularArea( 
-            document.getElementById('valorBase').value ,
-            document.getElementById('valorAltura').value 
-         );"
-    >
-      Calcular
-    </button>
+    <div class="container">
+      <h1>Cálculo de Formas Geométricas</h1>
+      <br />
+      <label for="forma">Selecione a forma:</label>
+      <select id="forma" name="forma" onchange="mostrarCampos()">
+        <option value="quadrado">Quadrado</option>
+        <option value="circulo">Círculo</option>
+      </select>
+      <br />
+      <div id="campoQuadrado">
+        <label for="valorLado">Lado:</label>
+        <input type="number" name="valorLado" id="valorLado" /><br />
+      </div>
+      <div id="campoCirculo" class="hidden">
+        <label for="valorRaio">Raio:</label>
+        <input type="number" name="valorRaio" id="valorRaio" /><br />
+      </div>
+      <label for="resultado">Área:</label>
+      <input type="text" name="resultado" id="resultado" readonly /><br />
+      <button id="calcula" name="calcula" onclick="calcularArea()">
+        Calcular
+      </button>
+    </div>
   </body>
 </html>

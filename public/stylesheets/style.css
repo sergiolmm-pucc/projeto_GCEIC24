@@ -1,5 +1,24 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
+a {
+  color: #fff;
+  width: fit-content;
+  padding: 0.2rem 1rem;
+  margin: 0.2rem;
+  border-radius: 1rem;
+  background-color: blueviolet;
+  text-decoration: none;
+}
+
+div {
+  margin: auto;
+  max-width: 80vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}

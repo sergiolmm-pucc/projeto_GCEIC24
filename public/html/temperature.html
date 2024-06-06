@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Temperatura</title>
-    <link rel="stylesheet" href="../stylesheets/temperature.css">
+    <link rel="stylesheet" href="../stylesheets/temperature.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <h1>Conversor de Temperatura</h1>
 
-    <form method="post" action="temperature/convert" id="temperatureConversorForm"></form>
+    <form
+      method="post"
+      action="temperature/convert"
+      id="temperatureConversorForm"
+    ></form>
     <div class="conversorContainer">
-        <label for="temp">Temperatura</label>
-        <input type="number" id="temp" name="temp" placeholder="Digite a temperatura" form="temperatureConversorForm"
-            required>
+      <label for="temp">Temperatura</label>
+      <input
+        type="number"
+        id="temp"
+        name="temp"
+        placeholder="Digite a temperatura"
+        form="temperatureConversorForm"
+        required
+      />
 
-        <select id="tempType" name="tempType" form="temperatureConversorForm" required>
-            <option value="celsius">Celsius</option>
-            <option value="fahrenheit">Fahrenheit</option>
-            <option value="kelvin">Kelvin</option>
-        </select>
+      <select
+        id="tempType"
+        name="tempType"
+        form="temperatureConversorForm"
+        required
+      >
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
 
-        <input id="convert" type="submit" value="Converter" form="temperatureConversorForm">
-        <div class="conversorResult" id="conversorResult"></div>
+      <input
+        id="convert"
+        type="submit"
+        value="Converter"
+        form="temperatureConversorForm"
+      />
+      <div class="conversorResult" id="conversorResult"></div>
     </div>
-</body>
-<script type="text/javascript" src="../javascripts/temperature.js"></script>
-
+  </body>
+  <script type="text/javascript" src="../javascripts/temperature.js"></script>
 </html>
