@@ -103,6 +103,9 @@ jobs:
       - name: Run teste TMB Funcional no glitch
         run: npm run tmb-test
 
+      - name: Run teste Imposto Funcional no glitch
+        run: npm run run e2e-test
+
       # - name: lista work directory
       #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24
       # - name: lista work directory

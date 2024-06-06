@@ -102,4 +102,12 @@
     <testcase classname="Teste exemplo 1 Funcao calcularArea" name="Teste exemplo 1 Funcao calcularArea" time="0.003">
     </testcase>
   </testsuite>
+  <testsuite name="Função calcularImposto" errors="0" failures="0" skipped="0" timestamp="2024-06-06T00:21:28" time="0.38" tests="3">
+    <testcase classname="Função calcularImposto deve calcular o imposto e o valor final corretamente" name="Função calcularImposto deve calcular o imposto e o valor final corretamente" time="0.002">
+    </testcase>
+    <testcase classname="Função calcularImposto deve retornar 0 de imposto e valor final igual ao preço quando a alíquota é 0" name="Função calcularImposto deve retornar 0 de imposto e valor final igual ao preço quando a alíquota é 0" time="0">
+    </testcase>
+    <testcase classname="Função calcularImposto deve lançar um erro se os parâmetros não forem números" name="Função calcularImposto deve lançar um erro se os parâmetros não forem números" time="0.008">
+    </testcase>
+  </testsuite>
 </testsuites>
