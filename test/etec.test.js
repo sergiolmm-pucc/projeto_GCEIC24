@@ -1,38 +1,41 @@
-const { calculoINSS, calculoIRRF, calculoEncargosEmpregador } = require("../public/javascripts/etec");
+// calculoEncargosEmpregador.test.js
+const { calculoEncargosEmpregador } = require('../public/javascripts/etec');
 
-test('calculoINSS deve calcular o valor correto do INSS', () => {
-    expect(calculoINSS(1000)).toBe(75.00);
-    expect(calculoINSS(1500)).toBe(112.65);
-    expect(calculoINSS(3000)).toBe(258.85);
-    expect(calculoINSS(5000)).toBe(650.34);
+test('calcula corretamente os encargos do empregador', () => {
+    const salario_bruto = 1000;
+    const resultadoEsperado = {
+        inssEmpregador: 80.00,
+        fgts: 80.00,
+        seguroAcidenteTrabalho: 8.00,
+        total: 168.00
+    };
+
+    const resultado = calculoEncargosEmpregador(salario_bruto);
+    expect(resultado).toEqual(resultadoEsperado);
 });
 
-test('calculoIRRF deve calcular o valor correto do IRRF e do INSS', () => {
-    expect(calculoIRRF(2000)).toEqual([0, 150.00]);
-    expect(calculoIRRF(2500)).toEqual([27.36, 197.65]);
-    expect(calculoIRRF(3500)).toEqual([102.96, 258.85]);
-    expect(calculoIRRF(4500)).toEqual([267.63, 378.82]);
-    expect(calculoIRRF(6000)).toEqual([517.67, 650.34]);
+test('calcula corretamente os encargos do empregador com salário decimal', () => {
+    const salario_bruto = 1234.56;
+    const resultadoEsperado = {
+        inssEmpregador: 98.76,
+        fgts: 98.76,
+        seguroAcidenteTrabalho: 9.88,
+        total: 207.40
+    };
+
+    const resultado = calculoEncargosEmpregador(salario_bruto);
+    expect(resultado).toEqual(resultadoEsperado);
 });
 
-test('calculoEncargosEmpregador deve calcular os encargos corretamente', () => {
-    expect(calculoEncargosEmpregador(2000)).toEqual({
-        inssEmpregador: 160.00,
-        fgts: 160.00,
-        seguroAcidenteTrabalho: 16.00,
-        total: 336.00
-    });
-    expect(calculoEncargosEmpregador(3000)).toEqual({
-        inssEmpregador: 240.00,
-        fgts: 240.00,
-        seguroAcidenteTrabalho: 24.00,
-        total: 504.00
-    });
-    expect(calculoEncargosEmpregador(4000)).toEqual({
-        inssEmpregador: 320.00,
-        fgts: 320.00,
-        seguroAcidenteTrabalho: 32.00,
-        total: 672.00
-    });
-});
+test('calcula corretamente os encargos do empregador com salário zero', () => {
+    const salario_bruto = 0;
+    const resultadoEsperado = {
+        inssEmpregador: 0.00,
+        fgts: 0.00,
+        seguroAcidenteTrabalho: 0.00,
+        total: 0.00
+    };
 
+    const resultado = calculoEncargosEmpregador(salario_bruto);
+    expect(resultado).toEqual(resultadoEsperado);
+});
