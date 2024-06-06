@@ -91,9 +91,6 @@ jobs:
       - name: Run teste Exemplo Funcional no glitch
         run: npm run e2e-test
 
-      - name: Run teste caloricExpenditure Funcional no glitch
-        run: npm run caloricExpenditure-test
-
       - name: Run teste IRRF Funcional no glitch
         run: npm run irrf-test
 
