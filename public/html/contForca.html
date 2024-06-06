@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Progressão de Treino</title>
+    <link rel="stylesheet" href="../stylesheets/contForca.css">
+    <script src="../javascripts/contForca.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Progressão de Treino de Força</h1>
+        <form id="weightForm">
+            <label for="currentWeight">Peso Atual:</label>
+            <input type="number" id="currentWeight" required>
+            <label for="exercise">Exercício:</label>
+            <select id="exercise">
+                <option value="1.08">Supino</option>
+                <option value="1.10">Agachamento</option>
+                <option value="1.15">Deadlift</option>
+                <option value="1.04">Desenvolvimento</option>
+                <option value="1.07">Remada Curvada</option>
+                <option value="1.05">Puxada Alta</option>
+                <option value="1.06">Rosca Direta</option>
+                <option value="1.03">Tríceps Corda</option>
+            </select>
+            <label for="difficulty">Dificuldade:</label>
+            <select id="difficulty">
+                <option value="1.05">Fácil - de 10 a 12 Reps</option>
+                <option value="1.00" selected>Médio - 6 a 10 Reps</option>
+                <option value="0.90">Difícil - Menos de 6</option>
+            </select>
+
+            <button type="submit">Calcular Progressão</button>
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

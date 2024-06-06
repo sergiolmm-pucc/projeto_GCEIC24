@@ -13,7 +13,8 @@
     "tmb-test": "node ./test/tmbFuncional",
     "e2e-test": "node ./test/impostoFuncional",
     "geomcalcTest": "mocha ./test/geomcalcTest.js",
-    "geomcalcTest2": "jest"
+    "geomcalcTest2": "jest",
+    "contForca-test": "node ./test/contForca"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

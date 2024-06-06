@@ -106,6 +106,9 @@ jobs:
       - name: Run teste Imposto Funcional no glitch
         run: npm run e2e-test
 
+      - name: Run Test contForca Funcional no glitch
+        run: npm run contForca-test
+
       # - name: lista work directory
       #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24
       # - name: lista work directory
