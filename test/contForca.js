@@ -1,6 +1,6 @@
-const { Builder, By, Key, until } = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
-const { Options } = require('s e l e n i u m - webdriver/chrome');
+const { Builder, By, until } = require('selenium-webdriver');
+const { Options } = require('selenium-webdriver/chrome');
+
 
 (async () => {
   // Configuração do ambiente do WebDriver e opções do navegador
