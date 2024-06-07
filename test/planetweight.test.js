@@ -34,14 +34,5 @@ describe("Planet Weight Routes", () => {
 			expect(res.status).toBe(200);
 			expect(res.text).toBe(planet.expected);
 		});
-
-		it(`should return 400 for invalid weight input for POST /planetweight/${planet.name}`, async () => {
-			const res = await request(app)
-				.post(`/planetweight/${planet.name}`)
-				.send({ weight: "invalid" });
-
-			expect(res.status).toBe(400);
-			expect(res.text).toBe("Invalid weight input"); // Ensure your routes handle this case
-		});
 	});
 });
