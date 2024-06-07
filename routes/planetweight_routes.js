@@ -18,43 +18,43 @@ router.get("/", function(_req, res) {
 router.post("/mercury", (req, res) => {
   const weight = req.body.weight;
   const mercuryWeight = (weight * 0.38).toFixed(2);
-  return res.send(`Your weight on Mercury is ${mercuryWeight} kg`);
+  return res.send(mercuryWeight);
 });
 
 router.post("/venus", (req, res) => {
   const weight = req.body.weight;
   const venusWeight = (weight * 0.91).toFixed(2);
-  return res.send(`Your weight on Venus is ${venusWeight} kg`);
+  return res.send(venusWeight);
 });
 
 router.post("/mars", (req, res) => {
   const weight = req.body.weight;
   const marsWeight = (weight * 0.38).toFixed(2);
-  return res.send(`Your weight on Mars is ${marsWeight} kg`);
+  return res.send(marsWeight);
 });
 
 router.post("/jupiter", (req, res) => {
   const weight = req.body.weight;
   const jupiterWeight = (weight * 2.34).toFixed(2);
-  return res.send(`Your weight on Jupiter is ${jupiterWeight} kg`);
+  return res.send(jupiterWeight);
 });
 
 router.post("/uranus", (req, res) => {
   const weight = req.body.weight;
   const uranusWeight = (weight * 0.92).toFixed(2);
-  return res.send(`Your weight on Uranus is ${uranusWeight} kg`);
+  return res.send(uranusWeight);
 });
 
 router.post("/neptune", (req, res) => {
   const weight = req.body.weight;
   const neptuneWeight = (weight * 1.19).toFixed(2);
-  return res.send(`Your weight on Neptune is ${neptuneWeight} kg`);
+  return res.send(neptuneWeight);
 });
 
 router.post("/pluto", (req, res) => {
   const weight = req.body.weight;
   const plutoWeight = (weight * 0.06).toFixed(2);
-  return res.send(`Your weight on Pluto is ${plutoWeight} kg`);
+  return res.send(plutoWeight);
 });
 
 module.exports = router;
