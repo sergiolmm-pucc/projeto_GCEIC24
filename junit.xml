@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="17" failures="0" errors="0" time="0.693">
+  <testsuite name="calculateRoi" errors="0" failures="0" skipped="0" timestamp="2024-06-06T19:56:38" time="0.57" tests="16">
+    <testcase classname="calculateRoi should calculate ROI correctly with valid numbers" name="calculateRoi should calculate ROI correctly with valid numbers" time="0.002">
+    </testcase>
+    <testcase classname="calculateRoi should throw an error if ganhoInvestimento is less than or equal to 0" name="calculateRoi should throw an error if ganhoInvestimento is less than or equal to 0" time="0.008">
+    </testcase>
+    <testcase classname="calculateRoi should throw an error if custoInvestimento is less than or equal to 0" name="calculateRoi should throw an error if custoInvestimento is less than or equal to 0" time="0.001">
+    </testcase>
+    <testcase classname="calculateRoi should handle string inputs that can be converted to numbers" name="calculateRoi should handle string inputs that can be converted to numbers" time="0">
+    </testcase>
+    <testcase classname="calculateRoi should throw an error for non-numeric inputs" name="calculateRoi should throw an error for non-numeric inputs" time="0.001">
+    </testcase>
+    <testcase classname="roiSchema should validate and transform valid inputs" name="roiSchema should validate and transform valid inputs" time="0.002">
+    </testcase>
+    <testcase classname="roiSchema should throw an error for invalid inputs" name="roiSchema should throw an error for invalid inputs" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should serve the ROI page" name="ROI API should serve the ROI page" time="0.019">
+    </testcase>
+    <testcase classname="ROI API should calculate ROI with valid numbers" name="ROI API should calculate ROI with valid numbers" time="0.018">
+    </testcase>
+    <testcase classname="ROI API should calculate ROI with valid string numbers" name="ROI API should calculate ROI with valid string numbers" time="0.005">
+    </testcase>
+    <testcase classname="ROI API should return error for missing ganhoInvestimento" name="ROI API should return error for missing ganhoInvestimento" time="0.008">
+    </testcase>
+    <testcase classname="ROI API should return error for missing custoInvestimento" name="ROI API should return error for missing custoInvestimento" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should return error for non-numeric ganhoInvestimento" name="ROI API should return error for non-numeric ganhoInvestimento" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should return error for non-numeric custoInvestimento" name="ROI API should return error for non-numeric custoInvestimento" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should return error for ganhoInvestimento less than 1" name="ROI API should return error for ganhoInvestimento less than 1" time="0.003">
+    </testcase>
+    <testcase classname="ROI API should return error for custoInvestimento less than 1" name="ROI API should return error for custoInvestimento less than 1" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-06-06T19:56:39" time="0.044" tests="1">
+    <testcase classname="Teste exemplo 1 Funcao calcularArea" name="Teste exemplo 1 Funcao calcularArea" time="0.001">
 <testsuites name="jest tests" tests="58" failures="0" errors="0" time="5.561">
   <testsuite name="Temperature testes" errors="0" failures="0" skipped="0" timestamp="2024-06-06T23:31:43" time="2.034" tests="9">
     <testcase classname="Temperature testes Convert from celsius" name="Temperature testes Convert from celsius" time="0.002">
