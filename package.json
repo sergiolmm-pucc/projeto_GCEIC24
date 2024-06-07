@@ -10,11 +10,7 @@
     "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
     "irrf-test": "node ./test/irrfFuncional",
     "SDI-test": "node ./test/SDIfuncional",
-    "tmb-test": "node ./test/tmbFuncional",
-    "e2e-test": "node ./test/impostoFuncional",
-    "geomcalcTest": "mocha ./test/geomcalcTest.js",
-    "geomcalcTest2": "jest",
-    "contForca-test": "node ./test/contForca"
+    "tmb-test": "node ./test/tmbFuncional"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -31,6 +27,7 @@
     "mocha": "^10.4.0",
     "morgan": "~1.9.1",
     "selenium-webdriver": "^4.21.0",
+    "supertest": "^7.0.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
