@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const fs = require("fs");
 const { roiSchema, calculateRoi } = require("../services/roi-devops14-service");
-var zod = require("zod");
+//var zod = require("zod");
 
 // Validação dos valores de entrada
 // TODO: Verificar se funciona com o Gitch
