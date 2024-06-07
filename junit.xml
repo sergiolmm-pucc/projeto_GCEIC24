@@ -1,27 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="54" failures="0" errors="0" time="2.273">
-  <testsuite name="Temperature testes" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:41" time="0.786" tests="9">
-    <testcase classname="Temperature testes Convert from celsius" name="Temperature testes Convert from celsius" time="0.002">
+<testsuites name="jest tests" tests="100" failures="0" errors="0" time="1.24">
+  <testsuite name="calculateRoi" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:26" time="0.525" tests="16">
+    <testcase classname="calculateRoi should calculate ROI correctly with valid numbers" name="calculateRoi should calculate ROI correctly with valid numbers" time="0.003">
     </testcase>
-    <testcase classname="Temperature testes Convert from fahrenheit" name="Temperature testes Convert from fahrenheit" time="0.001">
+    <testcase classname="calculateRoi should throw an error if ganhoInvestimento is less than or equal to 0" name="calculateRoi should throw an error if ganhoInvestimento is less than or equal to 0" time="0.011">
+    </testcase>
+    <testcase classname="calculateRoi should throw an error if custoInvestimento is less than or equal to 0" name="calculateRoi should throw an error if custoInvestimento is less than or equal to 0" time="0.001">
+    </testcase>
+    <testcase classname="calculateRoi should handle string inputs that can be converted to numbers" name="calculateRoi should handle string inputs that can be converted to numbers" time="0.001">
+    </testcase>
+    <testcase classname="calculateRoi should throw an error for non-numeric inputs" name="calculateRoi should throw an error for non-numeric inputs" time="0.001">
+    </testcase>
+    <testcase classname="roiSchema should validate and transform valid inputs" name="roiSchema should validate and transform valid inputs" time="0.002">
+    </testcase>
+    <testcase classname="roiSchema should throw an error for invalid inputs" name="roiSchema should throw an error for invalid inputs" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should serve the ROI page" name="ROI API should serve the ROI page" time="0.031">
+    </testcase>
+    <testcase classname="ROI API should calculate ROI with valid numbers" name="ROI API should calculate ROI with valid numbers" time="0.018">
+    </testcase>
+    <testcase classname="ROI API should calculate ROI with valid string numbers" name="ROI API should calculate ROI with valid string numbers" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should return error for missing ganhoInvestimento" name="ROI API should return error for missing ganhoInvestimento" time="0.005">
+    </testcase>
+    <testcase classname="ROI API should return error for missing custoInvestimento" name="ROI API should return error for missing custoInvestimento" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should return error for non-numeric ganhoInvestimento" name="ROI API should return error for non-numeric ganhoInvestimento" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should return error for non-numeric custoInvestimento" name="ROI API should return error for non-numeric custoInvestimento" time="0.004">
+    </testcase>
+    <testcase classname="ROI API should return error for ganhoInvestimento less than 1" name="ROI API should return error for ganhoInvestimento less than 1" time="0.003">
+    </testcase>
+    <testcase classname="ROI API should return error for custoInvestimento less than 1" name="ROI API should return error for custoInvestimento less than 1" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Planet Weight Routes" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:26" time="0.138" tests="21">
+    <testcase classname="Planet Weight Routes should return the correct weight for POST /planetweight/mercury" name="Planet Weight Routes should return the correct weight for POST /planetweight/mercury" time="0.008">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/mercury" name="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/mercury" time="0.004">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/mercury" name="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/mercury" time="0.002">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return the correct weight for POST /planetweight/venus" name="Planet Weight Routes should return the correct weight for POST /planetweight/venus" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/venus" name="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/venus" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/venus" name="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/venus" time="0.002">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return the correct weight for POST /planetweight/mars" name="Planet Weight Routes should return the correct weight for POST /planetweight/mars" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/mars" name="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/mars" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/mars" name="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/mars" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return the correct weight for POST /planetweight/jupiter" name="Planet Weight Routes should return the correct weight for POST /planetweight/jupiter" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/jupiter" name="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/jupiter" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/jupiter" name="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/jupiter" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return the correct weight for POST /planetweight/uranus" name="Planet Weight Routes should return the correct weight for POST /planetweight/uranus" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/uranus" name="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/uranus" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/uranus" name="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/uranus" time="0.002">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return the correct weight for POST /planetweight/neptune" name="Planet Weight Routes should return the correct weight for POST /planetweight/neptune" time="0.002">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/neptune" name="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/neptune" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/neptune" name="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/neptune" time="0.007">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return the correct weight for POST /planetweight/pluto" name="Planet Weight Routes should return the correct weight for POST /planetweight/pluto" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/pluto" name="Planet Weight Routes should return 400 for non-numeric weight input for POST /planetweight/pluto" time="0.003">
+    </testcase>
+    <testcase classname="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/pluto" name="Planet Weight Routes should return 400 for negative weight input for POST /planetweight/pluto" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Temperature testes" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:26" time="0.069" tests="9">
+    <testcase classname="Temperature testes Convert from celsius" name="Temperature testes Convert from celsius" time="0.001">
+    </testcase>
+    <testcase classname="Temperature testes Convert from fahrenheit" name="Temperature testes Convert from fahrenheit" time="0">
     </testcase>
     <testcase classname="Temperature testes Convert from kelvin" name="Temperature testes Convert from kelvin" time="0.001">
     </testcase>
-    <testcase classname="Temperature testes throws error if celsius is undefined" name="Temperature testes throws error if celsius is undefined" time="0.013">
+    <testcase classname="Temperature testes throws error if celsius is undefined" name="Temperature testes throws error if celsius is undefined" time="0.006">
     </testcase>
     <testcase classname="Temperature testes throws error if fahrenheit is undefined" name="Temperature testes throws error if fahrenheit is undefined" time="0.001">
     </testcase>
-    <testcase classname="Temperature testes throws error if kelvin is undefined" name="Temperature testes throws error if kelvin is undefined" time="0.001">
+    <testcase classname="Temperature testes throws error if kelvin is undefined" name="Temperature testes throws error if kelvin is undefined" time="0">
     </testcase>
     <testcase classname="Temperature testes throws error if celsius is NaN" name="Temperature testes throws error if celsius is NaN" time="0">
     </testcase>
-    <testcase classname="Temperature testes throws error if Fahrenheit is NaN" name="Temperature testes throws error if Fahrenheit is NaN" time="0">
+    <testcase classname="Temperature testes throws error if Fahrenheit is NaN" name="Temperature testes throws error if Fahrenheit is NaN" time="0.001">
     </testcase>
     <testcase classname="Temperature testes throws error if kelvin is NaN&quot;" name="Temperature testes throws error if kelvin is NaN&quot;" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Dev-ops-3-mark-up" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:42" time="0.124" tests="17">
-    <testcase classname="Dev-ops-3-mark-up calculate mark up" name="Dev-ops-3-mark-up calculate mark up" time="0">
+  <testsuite name="Dev-ops-3-mark-up" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.076" tests="17">
+    <testcase classname="Dev-ops-3-mark-up calculate mark up" name="Dev-ops-3-mark-up calculate mark up" time="0.001">
     </testcase>
     <testcase classname="Dev-ops-3-mark-up calculate final product price" name="Dev-ops-3-mark-up calculate final product price" time="0.001">
     </testcase>
@@ -31,13 +109,13 @@
     </testcase>
     <testcase classname="Dev-ops-3-mark-up calculate mark up without ml" name="Dev-ops-3-mark-up calculate mark up without ml" time="0.001">
     </testcase>
-    <testcase classname="Dev-ops-3-mark-up calculate mark up if df is NAN" name="Dev-ops-3-mark-up calculate mark up if df is NAN" time="0.001">
+    <testcase classname="Dev-ops-3-mark-up calculate mark up if df is NAN" name="Dev-ops-3-mark-up calculate mark up if df is NAN" time="0">
     </testcase>
     <testcase classname="Dev-ops-3-mark-up calculate mark up if dl is NAN" name="Dev-ops-3-mark-up calculate mark up if dl is NAN" time="0.001">
     </testcase>
     <testcase classname="Dev-ops-3-mark-up calculate mark up if ml is NAN" name="Dev-ops-3-mark-up calculate mark up if ml is NAN" time="0.001">
     </testcase>
-    <testcase classname="Dev-ops-3-mark-up calculate mark up if df &lt; 0" name="Dev-ops-3-mark-up calculate mark up if df &lt; 0" time="0">
+    <testcase classname="Dev-ops-3-mark-up calculate mark up if df &lt; 0" name="Dev-ops-3-mark-up calculate mark up if df &lt; 0" time="0.001">
     </testcase>
     <testcase classname="Dev-ops-3-mark-up calculate mark up if dl &lt; 0" name="Dev-ops-3-mark-up calculate mark up if dl &lt; 0" time="0.001">
     </testcase>
@@ -56,12 +134,12 @@
     <testcase classname="Dev-ops-3-mark-up calculate calculate final product price if mk&lt;0" name="Dev-ops-3-mark-up calculate calculate final product price if mk&lt;0" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="CaloricExpenditureService" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:42" time="0.129" tests="10">
-    <testcase classname="CaloricExpenditureService calculates caloric expenditure for a male" name="CaloricExpenditureService calculates caloric expenditure for a male" time="0.002">
+  <testsuite name="CaloricExpenditureService" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.041" tests="10">
+    <testcase classname="CaloricExpenditureService calculates caloric expenditure for a male" name="CaloricExpenditureService calculates caloric expenditure for a male" time="0">
     </testcase>
-    <testcase classname="CaloricExpenditureService calculates caloric expenditure for a female" name="CaloricExpenditureService calculates caloric expenditure for a female" time="0.001">
+    <testcase classname="CaloricExpenditureService calculates caloric expenditure for a female" name="CaloricExpenditureService calculates caloric expenditure for a female" time="0">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if gender is missing" name="CaloricExpenditureService throws error if gender is missing" time="0.01">
+    <testcase classname="CaloricExpenditureService throws error if gender is missing" name="CaloricExpenditureService throws error if gender is missing" time="0.004">
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if gender is invalid" name="CaloricExpenditureService throws error if gender is invalid" time="0.001">
     </testcase>
@@ -71,27 +149,43 @@
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if weight is invalid" name="CaloricExpenditureService throws error if weight is invalid" time="0.001">
     </testcase>
-    <testcase classname="CaloricExpenditureService throws error if age is invalid" name="CaloricExpenditureService throws error if age is invalid" time="0.001">
+    <testcase classname="CaloricExpenditureService throws error if age is invalid" name="CaloricExpenditureService throws error if age is invalid" time="0">
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if weight exceeds the maximum limit" name="CaloricExpenditureService throws error if weight exceeds the maximum limit" time="0.001">
     </testcase>
     <testcase classname="CaloricExpenditureService throws error if age exceeds the maximum limit" name="CaloricExpenditureService throws error if age exceeds the maximum limit" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Testes de calculo de TMB" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:42" time="0.1" tests="2">
-    <testcase classname="Testes de calculo de TMB calculo de TMB para homem de 20 anos, 100 kgs e 180 cm" name="Testes de calculo de TMB calculo de TMB para homem de 20 anos, 100 kgs e 180 cm" time="0">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.036" tests="5">
+    <testcase classname=" calcularMarkup deve retornar o valor correto com um markup de 20%" name=" calcularMarkup deve retornar o valor correto com um markup de 20%" time="0.001">
     </testcase>
-    <testcase classname="Testes de calculo de TMB calculo de TMB para mulher de 17 anos, 100 kgs e 165 cm" name="Testes de calculo de TMB calculo de TMB para mulher de 17 anos, 100 kgs e 165 cm" time="0">
+    <testcase classname=" calcularMarkup deve retornar o valor correto com um markup de 50%" name=" calcularMarkup deve retornar o valor correto com um markup de 50%" time="0.001">
+    </testcase>
+    <testcase classname=" calcularMarkup deve retornar o valor correto com um markup de 0%" name=" calcularMarkup deve retornar o valor correto com um markup de 0%" time="0">
+    </testcase>
+    <testcase classname=" calcularMarkup deve lançar um erro se o valor base for negativo" name=" calcularMarkup deve lançar um erro se o valor base for negativo" time="0.003">
+    </testcase>
+    <testcase classname=" calcularMarkup deve lançar um erro se o percentual de markup for negativo" name=" calcularMarkup deve lançar um erro se o percentual de markup for negativo" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Teste GeomCalc" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:42" time="0.102" tests="7">
+  <testsuite name="Teste ifsp - calcularImposto" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.036" tests="4">
+    <testcase classname="Teste ifsp - calcularImposto Cálculo de imposto e preço final" name="Teste ifsp - calcularImposto Cálculo de imposto e preço final" time="0.001">
+    </testcase>
+    <testcase classname="Teste ifsp - calcularImposto Valores inválidos devem lançar erro" name="Teste ifsp - calcularImposto Valores inválidos devem lançar erro" time="0.008">
+    </testcase>
+    <testcase classname="Teste ifsp - calcularImposto Cálculo com zero" name="Teste ifsp - calcularImposto Cálculo com zero" time="0">
+    </testcase>
+    <testcase classname="Teste ifsp - calcularImposto Cálculo com valores negativos" name="Teste ifsp - calcularImposto Cálculo com valores negativos" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Teste GeomCalc" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.028" tests="7">
     <testcase classname="Teste GeomCalc Calcular a área de um quadrado" name="Teste GeomCalc Calcular a área de um quadrado" time="0.001">
     </testcase>
     <testcase classname="Teste GeomCalc Calcular a área de um círculo" name="Teste GeomCalc Calcular a área de um círculo" time="0">
     </testcase>
-    <testcase classname="Teste GeomCalc Calcular a área de um retângulo" name="Teste GeomCalc Calcular a área de um retângulo" time="0.001">
+    <testcase classname="Teste GeomCalc Calcular a área de um retângulo" name="Teste GeomCalc Calcular a área de um retângulo" time="0">
     </testcase>
-    <testcase classname="Teste GeomCalc Calcular a área de um pentágono" name="Teste GeomCalc Calcular a área de um pentágono" time="0">
+    <testcase classname="Teste GeomCalc Calcular a área de um pentágono" name="Teste GeomCalc Calcular a área de um pentágono" time="0.001">
     </testcase>
     <testcase classname="Teste GeomCalc Calcular a área de um losango" name="Teste GeomCalc Calcular a área de um losango" time="0">
     </testcase>
@@ -100,34 +194,40 @@
     <testcase classname="Teste GeomCalc Calcular a área de um trapézio" name="Teste GeomCalc Calcular a área de um trapézio" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="CaloricExpenditureController" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:42" time="0.095" tests="2">
-    <testcase classname="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" name="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" time="0.002">
+  <testsuite name="Testes de calculo de TMB" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.03" tests="2">
+    <testcase classname="Testes de calculo de TMB calculo de TMB para homem de 20 anos, 100 kgs e 180 cm" name="Testes de calculo de TMB calculo de TMB para homem de 20 anos, 100 kgs e 180 cm" time="0">
     </testcase>
-    <testcase classname="CaloricExpenditureController returns 500 for internal server error" name="CaloricExpenditureController returns 500 for internal server error" time="0.001">
+    <testcase classname="Testes de calculo de TMB calculo de TMB para mulher de 17 anos, 100 kgs e 165 cm" name="Testes de calculo de TMB calculo de TMB para mulher de 17 anos, 100 kgs e 165 cm" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="Teste IRRF - Imposto de Renda Retido na Fonte" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:43" time="0.09" tests="1">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.031" tests="3">
+    <testcase classname=" calcula corretamente os encargos do empregador" name=" calcula corretamente os encargos do empregador" time="0.001">
+    </testcase>
+    <testcase classname=" calcula corretamente os encargos do empregador com salário decimal" name=" calcula corretamente os encargos do empregador com salário decimal" time="0">
+    </testcase>
+    <testcase classname=" calcula corretamente os encargos do empregador com salário zero" name=" calcula corretamente os encargos do empregador com salário zero" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Teste SDI - Simulador de Investimento" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.024" tests="1">
+    <testcase classname="Teste SDI - Simulador de Investimento Funcao Simulador de Investimento Seguro" name="Teste SDI - Simulador de Investimento Funcao Simulador de Investimento Seguro" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="CaloricExpenditureController" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.026" tests="2">
+    <testcase classname="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" name="CaloricExpenditureController returns 200 and calculated caloric expenditure for valid input" time="0.002">
+    </testcase>
+    <testcase classname="CaloricExpenditureController returns 500 for internal server error" name="CaloricExpenditureController returns 500 for internal server error" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Teste IRRF - Imposto de Renda Retido na Fonte" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.024" tests="1">
     <testcase classname="Teste IRRF - Imposto de Renda Retido na Fonte Função calcularIRRF" name="Teste IRRF - Imposto de Renda Retido na Fonte Função calcularIRRF" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="calcularNovoPeso" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:43" time="0.1" tests="1">
-    <testcase classname="calcularNovoPeso 65kg Remada Curvada Fácil" name="calcularNovoPeso 65kg Remada Curvada Fácil" time="0.001">
+  <testsuite name="calcularNovoPeso" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.027" tests="1">
+    <testcase classname="calcularNovoPeso 65kg Remada Curvada Fácil" name="calcularNovoPeso 65kg Remada Curvada Fácil" time="0.005">
     </testcase>
   </testsuite>
-  <testsuite name="Teste SDI - Simulador de Investimento" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:43" time="0.086" tests="1">
-    <testcase classname="Teste SDI - Simulador de Investimento Funcao Simulador de Investimento Seguro" name="Teste SDI - Simulador de Investimento Funcao Simulador de Investimento Seguro" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:43" time="0.106" tests="1">
-    <testcase classname="Teste exemplo 1 Funcao calcularArea" name="Teste exemplo 1 Funcao calcularArea" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-06T20:34:43" time="0.301" tests="3">
-    <testcase classname=" calcula corretamente os encargos do empregador" name=" calcula corretamente os encargos do empregador" time="0.002">
-    </testcase>
-    <testcase classname=" calcula corretamente os encargos do empregador com salário decimal" name=" calcula corretamente os encargos do empregador com salário decimal" time="0.001">
-    </testcase>
-    <testcase classname=" calcula corretamente os encargos do empregador com salário zero" name=" calcula corretamente os encargos do empregador com salário zero" time="0">
+  <testsuite name="Teste exemplo 1" errors="0" failures="0" skipped="0" timestamp="2024-06-07T21:53:27" time="0.024" tests="1">
+    <testcase classname="Teste exemplo 1 Funcao calcularArea" name="Teste exemplo 1 Funcao calcularArea" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
