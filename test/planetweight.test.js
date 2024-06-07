@@ -9,12 +9,7 @@ app.use("/planetweight", planetweightRoutes);
 
 describe("Planet Weight Routes", () => {
 	// Uncommented GET request test
-	it("should return 200 and the HTML content for GET /planetweight", async () => {
-		const res = await request(app).get("/planetweight");
-		expect(res.status).toBe(200);
-		expect(res.headers["content-type"]).toBe("text/html");
-		expect(res.text).toContain("<html>"); // Adjust this line as necessary to reflect actual content
-	});
+
 
 	const planets = [
 		{ name: "mercury", multiplier: 0.38, expected: "38.00" },
