@@ -3,28 +3,27 @@ var router = express.Router();
 const fs = require("fs");
 const { roiSchema, calculateRoi } = require("../services/roi-devops14-service");
 var zod = require("zod");
-const fs = require("fs");
 
 // Validação dos valores de entrada
 // TODO: Verificar se funciona com o Gitch
 // TODO: Adicionar o zod no package.json
 
-const roiSchema = zod.object({
-  ganhoInvestimento: zod.union([
-    zod
-      .string()
-      .min(1)
-      .transform((value) => Number(value)),
-    zod.number().min(1),
-  ]),
-  custoInvestimento: zod.union([
-    zod
-      .string()
-      .min(1)
-      .transform((value) => Number(value)),
-    zod.number().min(1),
-  ]),
-});
+// const roiSchema = zod.object({
+//   ganhoInvestimento: zod.union([
+//     zod
+//       .string()
+//       .min(1)
+//       .transform((value) => Number(value)),
+//     zod.number().min(1),
+//   ]),
+//   custoInvestimento: zod.union([
+//     zod
+//       .string()
+//       .min(1)
+//       .transform((value) => Number(value)),
+//     zod.number().min(1),
+//   ]),
+// });
 
 // Rota para verificar a integridade
 router.get("/", (_req, res) => {
