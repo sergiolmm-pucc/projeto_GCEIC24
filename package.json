@@ -5,8 +5,12 @@
   "scripts": {
     "start": "node ./bin/www",
     "lint": "eslint './routes/**/*.js?(x)'",
-    "test": "jest -ci --reportes=default --reporters=jest-junit",
-    "F-test": "node ./test/FuncionalExemplo"
+    "test": "jest -ci --reporters=default --reporters=jest-junit",
+    "F-test": "node ./test/FuncionalExemplo",
+    "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
+    "irrf-test": "node ./test/irrfFuncional",
+    "SDI-test": "node ./test/SDIfuncional",
+    "tmb-test": "node ./test/tmbFuncional"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -21,6 +25,7 @@
     "lint": "^0.8.19",
     "morgan": "~1.9.1",
     "selenium-webdriver": "^4.21.0",
+    "supertest": "^7.0.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
