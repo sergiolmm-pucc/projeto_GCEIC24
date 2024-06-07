@@ -21,7 +21,8 @@
     "geomcalcTest": "mocha ./test/geomcalcTest.js",
     "geomcalcTest2": "jest",
     "contForca-test": "node ./test/contForca",
-    "planet-test": "node ./test/planetweightFuncional.js"
+    "planet-test": "node ./test/planetweightFuncional.js",
+    "markup3-test": "node ./test/markup3Funcional.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
