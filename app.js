@@ -10,7 +10,7 @@ var exampleRouter = require("./routes/example");
 
 var calculadoraRouter = require("./routes/calculadora");
 var caloricExpenditureRouter = require("./routes/caloricExpendieture");
-
+var ifspRouter = require('./routes/ifspRoute');
 var devOps3MarkUpRouter = require("./routes/dev-ops-3-mark-up");
 
 var geomcalcRouter = require("./routes/geomcalcRouter");
@@ -18,12 +18,20 @@ var geomcalcRouter = require("./routes/geomcalcRouter");
 var infsRouter = require("./routes/infsRoute");
 var irrfRouter = require("./routes/irrf.routes");
 
-var SDIRouter = require("./routes/SDI.js");
+var markup8Router = require('./routes/markup-8');
+
+var planetweightRouter = require("./routes/planetweight_routes");
 
 var roiRouter = require("./routes/roi-devops14");
 
-var temperatureRouter = require("./routes/temperature");
+var SDIRouter = require("./routes/SDI");
+
+var {temperatureRouter} = require("./routes/temperature");
 var tmbRouter = require("./routes/tmb.routes");
+
+var contForcaRouter = require("./routes/contForca");
+
+var etecRouter = require("./routes/etec.routes");
 
 var app = express();
 
@@ -41,7 +49,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/example", exampleRouter);
-
+app.use('/ifsp', ifspRouter);
 app.use("/calculadora", calculadoraRouter);
 app.use("/caloricExpenditure", caloricExpenditureRouter);
 
@@ -52,6 +60,10 @@ app.use("/geomcalc", geomcalcRouter);
 app.use("/irrf", irrfRouter);
 app.use("/infs", infsRouter);
 
+app.use('/markup-8', markup8Router);
+
+app.use("/planetweight", planetweightRouter);
+
 app.use("/roi", roiRouter);
 
 app.use("/SDI", SDIRouter);
@@ -59,8 +71,12 @@ app.use("/SDI", SDIRouter);
 app.use("/temperature", temperatureRouter);
 app.use("/tmb", tmbRouter);
 
+app.use("/contForca",contForcaRouter);
+
+app.use("/etec", etecRouter);
+
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(_req, _res, next) {
   next(createError(404));
 });
 
