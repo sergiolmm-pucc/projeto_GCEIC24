@@ -32,11 +32,7 @@ describe("Planet Weight Routes", () => {
 				.send({ weight: 100 });
 
 			expect(res.status).toBe(200);
-			expect(res.text).toBe(
-				`Your weight is ${(100 * planet.multiplier).toFixed(
-					2
-				)} kg on this planet.`
-			);
+			expect(res.text).toBe(`Your weight is ${(100 * planet.multiplier).toFixed(2)} kg on this planet.`);
 		});
 
 		it(`should return 400 for invalid weight input for POST /planetweight/${planet.name}`, async () => {
