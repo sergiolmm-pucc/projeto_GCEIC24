@@ -8,12 +8,13 @@ app.use(bodyParser.json());
 app.use("/planetweight", planetweightRoutes);
 
 describe("Planet Weight Routes", () => {
-	// it("should return 200 and the HTML content for GET /planetweight", async () => {
-	// 	const res = await request(app).get("/planetweight");
-	// 	expect(res.status).toBe(200);
-	// 	expect(res.headers["content-type"]).toBe("text/html");
-	// 	expect(res.text).toContain("<html>"); // Assuming the HTML file contains this tag
-	// });
+	// Uncommented GET request test
+	it("should return 200 and the HTML content for GET /planetweight", async () => {
+		const res = await request(app).get("/planetweight");
+		expect(res.status).toBe(200);
+		expect(res.headers["content-type"]).toBe("text/html");
+		expect(res.text).toContain("<html>"); // Adjust this line as necessary to reflect actual content
+	});
 
 	const planets = [
 		{ name: "mercury", multiplier: 0.38, expected: "38.00" },
@@ -33,6 +34,24 @@ describe("Planet Weight Routes", () => {
 
 			expect(res.status).toBe(200);
 			expect(res.text).toBe(planet.expected);
+		});
+
+		it(`should return 400 for non-numeric weight input for POST /planetweight/${planet.name}`, async () => {
+			const res = await request(app)
+				.post(`/planetweight/${planet.name}`)
+				.send({ weight: "not a number" });
+
+			expect(res.status).toBe(400);
+			expect(res.text).toBe("Invalid weight input; weight must be a non-negative number.");
+		});
+
+		it(`should return 400 for negative weight input for POST /planetweight/${planet.name}`, async () => {
+			const res = await request(app)
+				.post(`/planetweight/${planet.name}`)
+				.send({ weight: -100 });
+
+			expect(res.status).toBe(400);
+			expect(res.text).toBe("Invalid weight input; weight must be a non-negative number.");
 		});
 	});
 });
