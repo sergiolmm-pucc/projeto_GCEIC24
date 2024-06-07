@@ -10,7 +10,12 @@
     "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
     "irrf-test": "node ./test/irrfFuncional",
     "SDI-test": "node ./test/SDIfuncional",
-    "tmb-test": "node ./test/tmbFuncional"
+    "tmb-test": "node ./test/tmbFuncional",
+    "e2e-test": "node ./test/impostoFuncional",
+    "geomcalcTest": "mocha ./test/geomcalcTest.js",
+    "geomcalcTest2": "jest",
+    "contForca-test": "node ./test/contForca",
+    "planet-test": "node ./test/planetweightFuncional.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
