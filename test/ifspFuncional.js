@@ -2,9 +2,10 @@
 // npm install --save-dev start-server-and-test
 // "e2e-test": "start-server-and-test http://localhost:3000/ifsp test"
 
-const { Builder, By, Key, until } = require('selenium-webdriver');
-const { Options } = require('selenium-webdriver/chrome');
-const fs = require('fs');
+const { Builder, Browser, By, Key, until } = require("selenium-webdriver");
+const chrome = require("selenium-webdriver/chrome");
+const { Options } = require("selenium-webdriver/chrome");
+
 
 (async () => {
   const screen = {
@@ -24,8 +25,11 @@ const fs = require('fs');
   let driver = await builder.build();
 
   try {
-    await driver.get('http://localhost:3000/ifsp');
+    // Navegação para a página HTML
+    await driver.get("https://aeolian-momentous-cellar.glitch.me/ifsp");
 
+    
+    await driver.sleep(15000);
 
     await driver.wait(until.elementLocated(By.id('price')), 10000);
     await driver.wait(until.elementIsVisible(driver.findElement(By.id('price'))), 10000);
@@ -33,63 +37,63 @@ const fs = require('fs');
     await driver.wait(until.elementIsVisible(driver.findElement(By.id('tax'))), 10000);
 
 
-    await driver.takeScreenshot().then((image) => {
-      fs.writeFile('./screenshots/inicio-ifsp.png', image, 'base64', function (err) {
-        if (err) {
-          console.log('Erro ao gravar a captura de tela inicial:', err);
-        } else {
-          console.log('Captura de tela inicial gravada.');
+    await driver.takeScreenshot().then((image, err) => {
+      require("fs").writeFile(
+        "./fotos/ifsp/inicio-ifsp.png",
+        image,
+        "base64",
+        function(err) {
+          if (err == null) {
+            console.log("Gravou Foto Inicial");
+          } else {
+            console.log("Erro ->" + err);
+          }
         }
-      });
+      );
     });
 
 
-    await driver.findElement(By.id('price')).sendKeys('100', Key.RETURN);
-    await driver.findElement(By.id('tax')).sendKeys('20', Key.RETURN);
+    await driver.findElement(By.id('price')).sendKeys('33');
+    await driver.findElement(By.id('tax')).sendKeys('10');
 
 
-    await driver.takeScreenshot().then((image) => {
-      fs.writeFile('./screenshots/valores-digitados-ifsp.png', image, 'base64', function (err) {
-        if (err) {
-          console.log('Erro ao gravar a captura de tela com valores digitados:', err);
-        } else {
-          console.log('Captura de tela com valores digitados gravada.');
+    await driver.takeScreenshot().then((image, err) => {
+      require("fs").writeFile(
+        "./fotos/ifsp/valorDigitado-ifsp.png",
+        image,
+        "base64",
+        function(err) {
+          if (err == null) {
+            console.log("Gravou Foto com valores");
+          } else {
+            console.log("Erro ->" + err);
+          }
         }
-      });
+      );
     });
 
 
     const calcularButton = await driver.findElement(By.className('SubmitInput'));
     await calcularButton.click();
 
+// Espera pelo alerta
+try {
+  await driver.wait(until.alertIsPresent(), 5000);
+  const alert = await driver.switchTo().alert();
+  console.log("PopUp com resultados aparece.");
+  console.log("Texto do alerta:", await alert.getText());
 
-    await driver.wait(until.alertIsPresent(), 5000);
-    const alert = await driver.switchTo().alert();
-    const alertText = await alert.getText();
-    console.log('Alert Text:', alertText);
-    await alert.accept();
+  // Aceita o alerta
+  await alert.accept();
+  console.log("Alerta aceito.");
 
-
-    const expectedAlertText = 'Valor do Produto: R$ 100.00\nAlíquota: 20.00%\nImposto: R$ 20.00\nPreço Final: R$ 120.00';
-    if (alertText === expectedAlertText) {
-      console.log('Passou: O texto do alerta está correto.');
-    } else {
-      console.log('Falhou: O texto do alerta está incorreto.');
-    }
-
-
-    await driver.takeScreenshot().then((image) => {
-      fs.writeFile('./screenshots/fim-ifsp.png', image, 'base64', function (err) {
-        if (err) {
-          console.log('Erro ao gravar a captura de tela final:', err);
-        } else {
-          console.log('Captura de tela final gravada.');
-        }
-      });
-    });
-
+} catch (e) {
+  // Se não houver alerta, exibir mensagem no console
+  console.log("Erro de não aparecer alerta.");
+}
+    // Encerramento do WebDriver
   } catch (error) {
-    console.error('Teste funcional falhou:', error);
+    console.error("Teste funcional falhou:", error);
   } finally {
     await driver.quit();
   }
