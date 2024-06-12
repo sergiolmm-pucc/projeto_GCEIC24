@@ -1,3 +1,7 @@
+// npm install selenium-webdriver
+// npm install --save-dev start-server-and-test
+//"e2e-test": "start-server-and-test http://localhost:3000/ht test2"
+
 const { Builder, Browser, By, Key, until } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const { Options } = require("selenium-webdriver/chrome");
