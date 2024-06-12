@@ -39,6 +39,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "start-server-and-test": "^2.0.3"
+    "start-server-and-test": "^2.0.4"
   }
 }
