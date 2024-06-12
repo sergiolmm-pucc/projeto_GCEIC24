@@ -112,6 +112,9 @@ jobs:
       - name: Run Test ifsp Funcional no glitch
         run: npm run ifsp-test
 
+      - name: Run Test roi-devops14 Funcional no glitch
+        run: npm run roi-devops14-test
+        
       # - name: lista work directory
       #   run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24
       # - name: lista work directory

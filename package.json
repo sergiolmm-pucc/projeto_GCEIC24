@@ -11,19 +11,14 @@
     "irrf-test": "node ./test/irrfFuncional",
     "SDI-test": "node ./test/SDIfuncional",
     "tmb-test": "node ./test/tmbFuncional",
-    "test": "jest -ci --reporters=default --reporters=jest-junit",
-    "F-test": "node ./test/FuncionalExemplo",
-    "caloricExpenditure-test": "node ./test/caloricExpenditureFuncional",
-    "irrf-test": "node ./test/irrfFuncional",
-    "SDI-test": "node ./test/SDIfuncional",
-    "tmb-test": "node ./test/tmbFuncional",
     "e2e-test": "node ./test/impostoFuncional",
     "geomcalcTest": "mocha ./test/geomcalcTest.js",
     "geomcalcTest2": "jest",
     "contForca-test": "node ./test/contForca",
     "planet-test": "node ./test/planetweightFuncional.js",
     "markup3-test": "node ./test/markup3Funcional.js",
-    "ifsp-test": "node ./test/ifspFuncional.js"
+    "ifsp-test": "node ./test/ifspFuncional.js",
+    "roi-devops14-test": "node ./test/roi-devops14Funcional.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
