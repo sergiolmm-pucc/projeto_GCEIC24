@@ -14,6 +14,7 @@
     "e2e-test": "node ./test/impostoFuncional",
     "geomcalcTest": "mocha ./test/geomcalcTest.js",
     "geomcalcTest2": "jest",
+    "etec-test": "node ./test/etecFuncional.js",
     "contForca-test": "node ./test/contForca"
   },
   "dependencies": {
@@ -34,6 +35,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "start-server-and-test": "^2.0.3"
+    "start-server-and-test": "^2.0.4"
   }
 }
