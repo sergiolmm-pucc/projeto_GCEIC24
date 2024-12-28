@@ -17,7 +17,7 @@ else
   for fruit in "${array[@]}"; do
     echo "$fruit"
   done  
-  array=($MY_SECRET//9/ )
+  array=($MY_SECRET// / )
   for fruit in "${array[@]}"; do
     echo "$fruit"
   done 
@@ -26,6 +26,6 @@ else
   for fruit in "${array[@]}"; do
     echo "$fruit"
   done  
-  teste= (${MY_SECRET// /}) + "_teste_";
+  teste=$MY_SECRET + "_teste_";
   echo "O valor do secret é: $MY_SECRET - $teste"
 fi
