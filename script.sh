@@ -18,7 +18,5 @@ else
   array=($MY_SECRET//9/ )
   for fruit in "${array[@]}"; do
     echo "$fruit"
-  
-
   echo "O valor do secret é: $MY_SECRET"
 fi
