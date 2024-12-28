@@ -27,6 +27,11 @@ jobs:
         run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24
       - name: lista work directory
         run: ls -la /home/runner/work/projeto_GCEIC24/projeto_GCEIC24/fotos
+      - name: valor do token
+        run: echo "${{ secrets.authToken }}"
+      - name: valor do token2
+        run: echo ${{ secrets.authToken }}
+        
 
   test:
     needs: getCode
