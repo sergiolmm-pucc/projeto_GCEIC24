@@ -35,7 +35,12 @@ jobs:
         run: echo "The secret is ${MY_SECRET}"
         env:
           MY_SECRET: ${{ secrets.authToken }}
-        
+      - name: Pass Secret to Bash Script
+        run: |
+          chmod +x script.sh
+          ./home/runner/work/projeto_GCEIC24/projeto_GCEIC24/script.sh
+        env:
+          MY_SECRET: ${{ secrets.authToken }}
 
   test:
     needs: getCode
