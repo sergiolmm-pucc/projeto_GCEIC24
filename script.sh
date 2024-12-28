@@ -8,5 +8,17 @@ if [ -z "$MY_SECRET" ]; then
   echo "O secret não foi passado corretamente!"
   exit 1
 else
+  string="apple,banana,orange"
+  array=(${string//,/ })
+  for fruit in "${array[@]}"; do
+    echo "$fruit"
+  array=(${MY_SECRET//9/ })
+  for fruit in "${array[@]}"; do
+    echo "$fruit"
+  array=($MY_SECRET//9/ )
+  for fruit in "${array[@]}"; do
+    echo "$fruit"
+  
+
   echo "O valor do secret é: $MY_SECRET"
 fi
