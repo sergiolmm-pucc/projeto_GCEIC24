@@ -31,6 +31,10 @@ jobs:
         run: echo "${{ secrets.authToken }}"
       - name: valor do token2
         run: echo ${{ secrets.authToken }}
+      - name: Print a secret
+        run: echo "The secret is ${MY_SECRET}"
+        env:
+          MY_SECRET: ${{ secrets.authToken }}
         
 
   test:
