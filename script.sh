@@ -30,7 +30,7 @@ else
   str = ""
   array=(${MY_SECRET//-/ })
   for fruit in "${array[@]}"; do
-    str = str + "$fruit" + "-"
+    str += "$fruit" + "-"
     
   done  
   echo "$str"
