@@ -31,6 +31,7 @@ else
   array=(${MY_SECRET//-/ })
   for fruit in "${array[@]}"; do
     str+="$fruit"   
+    str+="-"
   done  
   echo "$str"
   echo "O valor do secret é: $MY_SECRET - $teste"
