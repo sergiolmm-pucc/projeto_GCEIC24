@@ -34,13 +34,13 @@ jobs:
       - name: Print a secret
         run: echo "The secret is ${MY_SECRET}"
         env:
-          MY_SECRET: ${{ secrets.authToken }}
+          MY_SECRET: ${{ secrets.OPTA_KEY }}
       - name: Pass Secret to Bash Script
         run: |
           chmod +x script.sh
           ./script.sh
         env:
-          MY_SECRET: ${{ secrets.authToken }}
+          MY_SECRET: ${{ secrets.OPTA_KEY }}
 
   test:
     needs: getCode
