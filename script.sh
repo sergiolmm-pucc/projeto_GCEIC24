@@ -27,11 +27,12 @@ else
     echo "$fruit"
   done  
   echo "--- novo ---"
-  array=(${MY_SECRET//7/ })
+  str = ""
+  array=(${MY_SECRET//-/ })
   for fruit in "${array[@]}"; do
-    echo "$fruit"
-    echo "7"
+    str = str + "$fruit" + "-"
+    
   done  
-  
+  echo "$str"
   echo "O valor do secret é: $MY_SECRET - $teste"
 fi
